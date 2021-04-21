@@ -9,7 +9,7 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
    Readme Updated 2021 April 21
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/skullsminer/SkullsMinerLite/master/Utils/Screenshot.jpg">	
+<img src="https://github.com/skullsminer/SkullsMinerLite/blob/main/Utils/Screenshot.jpg?raw=true">	
 </p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/skullsminer/SkullsMinerLite/master/Utils/WebUI.png">	

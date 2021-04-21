@@ -1,0 +1,19 @@
+{
+    "default":  {
+                    "PricePenaltyFactor":  1,
+                    "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                    "UserName":  "skullsminerlite",
+                    "WorkerName":  "skullsminerlite",
+                    "APIKey":  ""
+                },
+    "phiphipoolplus":  {
+                           "PricePenaltyFactor":  0.97,
+                           "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                           "UserName":  "skullsminerlite",
+                           "WorkerName":  "skullsminerlite",
+                           "APIKey":  "",
+                           "Algorithm":  [
+                                             "+x21s"
+                                         ]
+                       }
+}

@@ -1,0 +1,113 @@
+﻿{
+    "default":  {
+                    "UserName":  "skullsminer",
+                    "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                    "WorkerName":  "ID=skullsminerlite",
+                    "PricePenaltyFactor":  1
+                },
+    "ahashpool":  {
+                      "UserName":  "skullsminer",
+                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                      "WorkerName":  "ID=skullsminerlite",
+                      "PricePenaltyFactor":  1
+                  },
+    "ahashpool24hr":  {
+                          "UserName":  "skullsminer",
+                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                          "WorkerName":  "ID=skullsminerlite",
+                          "PricePenaltyFactor":  1
+                      },
+    "ahashpoolplus":  {
+                          "UserName":  "skullsminer",
+                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                          "WorkerName":  "ID=skullsminerlite",
+                          "PricePenaltyFactor":  1
+                      },
+
+    "hashrefinery":  {
+                         "UserName":  "skullsminer",
+                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                         "WorkerName":  "ID=skullsminerlite",
+                         "PricePenaltyFactor":  1
+                     },
+    "minemoney":  {
+                      "UserName":  "skullsminer",
+                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                      "WorkerName":  "ID=skullsminerlite",
+                      "PricePenaltyFactor":  1
+                  },
+    "minemoney24hr":  {
+                          "UserName":  "skullsminer",
+                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                          "WorkerName":  "ID=skullsminerlite",
+                          "PricePenaltyFactor":  1
+                      },
+    "miningpoolhub":  {
+                          "UserName":  "skullsminer",
+                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                          "WorkerName":  "skullsminerlite",
+                          "PricePenaltyFactor":  1,
+                          "APIKey":  ""
+                      },
+    "nicehash":  {
+                     "UserName":  "3JWdXDyRsrQdFBcHdqar4n1wnyzjFPRHsj",
+                     "Wallet":  "3JWdXDyRsrQdFBcHdqar4n1wnyzjFPRHsj",
+                     "WorkerName":  "skullsminerlite",
+					 "PricePenaltyFactor":  1
+                 },
+	"prohashing":  {
+                     "UserName":  "skullsminer",
+                     "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                     "WorkerName":  "ID=skullsminerlite",
+                     "PricePenaltyFactor":  1
+                 },
+    "prohashing24hr":  {
+                         "UserName":  "skullsminer",
+                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                         "WorkerName":  "ID=skullsminerlite",
+                         "PricePenaltyFactor":  1
+                     },
+    "prohashingplus":  {
+                         "UserName":  "skullsminer",
+                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                         "WorkerName":  "ID=skullsminerlite",
+                         "PricePenaltyFactor":  1
+                     },
+
+    "zergpool":  {
+                     "UserName":  "skullsminer",
+                     "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                     "WorkerName":  "ID=skullsminerlite",
+                     "PricePenaltyFactor":  1
+                 },
+    "zergpool24hr":  {
+                         "UserName":  "skullsminer",
+                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                         "WorkerName":  "ID=skullsminerlite",
+                         "PricePenaltyFactor":  1
+                     },
+    "zergpoolplus":  {
+                         "UserName":  "skullsminer",
+                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                         "WorkerName":  "ID=skullsminerlite",
+                         "PricePenaltyFactor":  1
+                     },
+    "zpool":  {
+                  "UserName":  "skullsminer",
+                  "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                  "WorkerName":  "ID=skullsminerlite",
+                  "PricePenaltyFactor":  1
+              },
+    "zpool24hr":  {
+                      "UserName":  "skullsminer",
+                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                      "WorkerName":  "ID=skullsminerlite",
+                      "PricePenaltyFactor":  1
+                  },
+    "zpoolplus":  {
+                      "UserName":  "skullsminer",
+                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
+                      "WorkerName":  "ID=skullsminerlite",
+                      "PricePenaltyFactor":  1
+                  }
+}

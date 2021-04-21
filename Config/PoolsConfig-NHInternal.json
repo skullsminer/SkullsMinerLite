@@ -1,0 +1,14 @@
+﻿{
+    "default":  {
+                    "UserName":  "skullsminerlite",
+                    "Wallet":  "3JWdXDyRsrQdFBcHdqar4n1wnyzjFPRHsj",
+                    "WorkerName":  "ID=skullsminerlite",
+                    "PricePenaltyFactor":  1
+                },
+    "nicehash":  {
+                     "UserName":  "3JWdXDyRsrQdFBcHdqar4n1wnyzjFPRHsj",
+                     "Wallet":  "3JWdXDyRsrQdFBcHdqar4n1wnyzjFPRHsj",
+                     "WorkerName":  "skullsminerlite",
+                     "PricePenaltyFactor":  1
+                 }
+}

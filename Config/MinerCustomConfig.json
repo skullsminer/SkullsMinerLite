@@ -1,0 +1,50 @@
+﻿[
+    {
+        "Algo":  "equihash144",
+        "Pool":  "zergpoolplus",
+        "Miner":  "",
+        "Coin":  "LTZ",
+        "CustomPasswordAdds":  "",
+        "CustomCommandAdds":  "",
+        "IncludeCoins":  [
+                             ""
+                         ],
+        "ExcludeCoins":  [
+                             ""
+                         ],
+        "code":  "$AbortCurrentPool = $True",
+        "Enabled":  true
+    },
+    {
+        "Algo":  "ExampleAlgo",
+        "Pool":  "ExamplePool",
+        "Miner":  "miniz",
+        "Coin":  "ExampleCoin",
+        "CustomPasswordAdds":  ",m=party.SkullsMinerLite",
+        "CustomCommandAdds":  "-i 19",
+        "IncludeCoins":  [
+                             ""
+                         ],
+        "ExcludeCoins":  [
+                             ""
+                         ],
+        "code":  "",
+        "Enabled":  false
+    },
+    {
+        "Algo":  "ExampleAlgo2",
+        "Pool":  "ExamplePool2",
+        "Miner":  "miniz",
+        "Coin":  "ExampleCoin2",
+        "CustomPasswordAdds":  ",m=party.SkullsMinerLite",
+        "CustomCommandAdds":  "-i 19",
+        "IncludeCoins":  [
+                             ""
+                         ],
+        "ExcludeCoins":  [
+                             ""
+                         ],
+        "code":  "",
+        "Enabled":  false
+    }
+]

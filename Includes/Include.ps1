@@ -1291,6 +1291,7 @@ Function Autoupdate {
     try {
         $AutoUpdateVersion = Invoke-WebRequest "http://skullsminer.bplaced.net/update.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
     }
+	
     catch {$AutoUpdateVersion = Get-content ".\Config\AutoUpdateVersion.json" | Convertfrom-json}
     If ($AutoUpdateVersion -ne $null) {$AutoUpdateVersion | ConvertTo-json | Out-File ".\Config\AutoUpdateVersion.json"}
     If ($AutoUpdateVersion.Product -eq $Variables.CurrentProduct -and [Version]$AutoUpdateVersion.Version -gt $Variables.CurrentVersion -and $AutoUpdateVersion.AutoUpdate) {
@@ -1305,8 +1306,8 @@ Function Autoupdate {
             If ($Variables.Started) {$Config.autostart = $true}
             Write-Config -ConfigFile $ConfigFile -Config $Config
             
-             Download CRC File from a different location
-             Abort if failed
+             #Download CRC File from a different location
+             #Abort if failed
             Update-Status("Retrieving update CRC")
             try {
                 $UpdateCRC = Invoke-WebRequest "http://skullsminer.bplaced.net/crc.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json

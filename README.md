@@ -1,5 +1,5 @@
-Copyright (c) 2021 SkullDeath(https://github.com/skullsminer/SkullsMinerLite)
-SkullsMinerIcon from (https://www.flaticon.com)
+Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
+<div> SkullsMinerIcon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 <p align="center">
 <img src="http://skullsminer.bplaced.net/images/hacker.png" width="128" height="128">

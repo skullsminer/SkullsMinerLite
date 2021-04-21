@@ -1,4 +1,5 @@
 Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
+SkullsMinerIcon from (https://www.flaticon.com)
 
 <p align="center">
 <img src="http://skullsminer.bplaced.net/images/hacker.png" width="128" height="128">
@@ -26,7 +27,6 @@ Since I´m changing a lot to suit my needs and this is the best way for me to le
 Fee:
 
       There is a 16 minutes per day fee (1%).
-      I do my best to make SkullsMinerLite your best tool.
       Fee Distribution List: (http://skullsminer.bplaced.net/skullsminerlite.json)
 
 *****

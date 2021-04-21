@@ -12,7 +12,7 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 <img src="https://github.com/skullsminer/SkullsMinerLite/blob/main/Utils/Screenshot.jpg?raw=true">	
 </p>
 <p align="center">
-<img src="https://raw.githubusercontent.com/skullsminer/SkullsMinerLite/master/Utils/WebUI.png">	
+<img src="https://github.com/skullsminer/SkullsMinerLite/blob/main/Utils/WebUI.png?raw=true">	
 </p>
 
 *****

@@ -1,4 +1,4 @@
-Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
+Copyright (c) 2021 SkullDeath(https://github.com/skullsminer/SkullsMinerLite)
 SkullsMinerIcon from (https://www.flaticon.com)
 
 <p align="center">

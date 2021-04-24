@@ -26,7 +26,7 @@ The miner script has been forked from NplusMiner, for my private use only.
 Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
 !!!!Credit to MrPlus (https://github.com/MrPlusGH/NPlusMiner) & NemosMiner (https://github.com/Minerx117/NemosMiner)!!!
 
-**SkullsMinerIcon from <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+**SkullsMinerIcon from Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
 Fee:
 
@@ -79,7 +79,7 @@ Easy configuration, easy start in two steps:
 
    GUI
    
-      Since version 2.0 SkullsMinerLite has a GUI making it easy to configure and run.
+      SkullsMinerLite has a GUI making it easy to configure and run.
       Relies on config files. No need to edit bat files. Simply run SkullsMinerLite 
       Set your wallet address and hit start
       For console lovers. Run SkullsMinerLite-ConsoleUp.
@@ -141,8 +141,7 @@ Easy configuration, easy start in two steps:
           - You feel like a pool is exaggerating his estimations by 10% - Set PricePenaltyFactor to 0.9
 
    BrainPlus - ahashpoolplus / zergpoolplus / zpoolplus / BlockMastersPlus / PhiPhiPoolPlus / StarPoolPlus / HashRefineryPlus
-   
-      Did we say AI ;)
+
       Uses calculations based on 24hractual and currentestimate ahashpool prices to get more realistic estimate.
       Includes some trust index based on past 1hr currentestimate variation from 24hr.
       AND is NOT sensible to spikes.
@@ -160,7 +159,7 @@ Easy configuration, easy start in two steps:
 	 
    Developers and Contributors fee distribution
 
-      There is a 20 minutes per day fee (1%)
+      There is a 16 minutes per day fee (1%)
       
       We use a fair fee distribution to developers and contributors. Fees are distibuted randomly
       to a public list of devs which can be found here: http://skullsminer.bplaced.net/skullsminerlite.json
@@ -175,11 +174,8 @@ Easy configuration, easy start in two steps:
 
    Miners Monitoring
 
-      Keep tabs on all your mining rigs from one place
-      You can now optionally monitor all your workers remotely, both in the GUI and via https://http://skullsminer.bplaced.net 
-      Monitoring setup instructions http://skullsminer.bplaced.net/setup.php
-      
-      SkullsMinerLite does not send any personnal informations to servers. Only miner related info are collected as miner names and hashrates. Miners path are all expressed relative so we have no risk to send any personnal informations like username.
+	  For the moment there is a local web interface
+      SkullsMinerLite does not send any personal informations to servers. Only miner related info are collected as miner names and hashrates. Miners path are all expressed relative so we have no risk to send any personnal informations like username.
 
    Algo selection
 
@@ -261,6 +257,8 @@ Some miners may need 'Visual C++ 2015 update 3' if you don't already have it: (i
 running multiple cards its recommended to increase Virtual Memory 64gb is optimal
 
 Requires Nvidia driver 431.86: https://www.geforce.com/drivers
+
+Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-archive
 
 Made For & Tested with 6x1070 6x1070ti 6x1080 6x1080ti 9x1660ti 6x2060 6x2070 6x2080 6x2080ti(users have reported up to 12cards working have not tested myself) Some miners do not support more than 9 cards
 

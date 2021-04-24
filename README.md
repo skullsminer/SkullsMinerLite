@@ -64,8 +64,8 @@ Easy configuration, easy start in two steps:
 - [nicehash](https://www.nicehash.com)
 - [miningpoolhub](https://miningpoolhub.com/)
 - [BlockMasters](http://blockmasters.co)
-- [ProHashing](https://prohashing.com?r=m1HNHfYS)
-- [unMineable](https://unmineable.com/?ref=2qfx-36p9)
+- [ProHashing](https://prohashing.com/?r=VaP0CpNE)
+- [unMineable](https://unmineable.com/?ref=tiy3-p5qg)
 - [HashCryptos](https://www.hashcryptos.com)
 
 

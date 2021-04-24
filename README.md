@@ -24,7 +24,9 @@ Readme Updated 2021 April 21
 *****
 The miner script has been forked from NplusMiner, for my private use only.
 Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
-!!!!Credit to MrPlus (https://github.com/MrPlusGH/NPlusMiner) & NemosMiner (https://github.com/Minerx117/NemosMiner)!!!!
+!!!!Credit to MrPlus (https://github.com/MrPlusGH/NPlusMiner) & NemosMiner (https://github.com/Minerx117/NemosMiner)!!!
+
+**SkullsMinerIcon from <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
 Fee:
 

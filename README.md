@@ -258,7 +258,7 @@ running multiple cards its recommended to increase Virtual Memory 64gb is optima
 
 Requires Nvidia driver 431.86: https://www.geforce.com/drivers
 
-Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-archive
+Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-archive CAUTION: During the CudaSetup choose CUDA to be installed only!
 
 Made For & Tested with 6x1070 6x1070ti 6x1080 6x1080ti 9x1660ti 6x2060 6x2070 6x2080 6x2080ti(users have reported up to 12cards working have not tested myself) Some miners do not support more than 9 cards
 

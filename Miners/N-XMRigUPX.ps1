@@ -4,7 +4,7 @@ return
 if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
 
 $Path = ".\Bin\NVIDIA-XMRigUPX\xmrig-nvidia.exe"
-$Uri = "https://github.com/MrPlusGH/NPlusMiner-MinersBinaries/raw/master/MinersBinaries/N-XMRigUPX/xmrig-nvidia-2.14.4_with-upx2-cuda10_1-win64.zip"
+$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/N-XMRigUPX/xmrig-nvidia-2.14.4_with-upx2-cuda10_1-win64.zip"
  
 $Commands = [PSCustomObject]@{
     # "cryptonightr"        = " -a cryptonight/r --nicehash" #cryptonight/r

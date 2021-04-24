@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
  
 $Path = ".\Bin\CPU-Arctichash\cpuminer.exe"
-$Uri = "https://github.com/MrPlusGH/NPlusMiner-MinersBinaries/raw/master/MinersBinaries/CPU-Arctichash/CPU-Arctichash.zip"
+$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/CPU-Arctichash/CPU-Arctichash.zip"
 
 $Commands = [PSCustomObject]@{
     "arctichash" = "-a arctichash" #power2b

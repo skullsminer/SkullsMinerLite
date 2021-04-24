@@ -197,7 +197,7 @@ Easy configuration, easy start in two steps:
       Mine anything but x16r and bcd:		Algo list = -x16r,-bcd
       Mine only x16r:				Algo list = +x16r
       Mine only x16r and BCD:			Algo list = +x16r,+bcd
-      Mine any available algo at pool:		Algo list = <blank>
+      Mine any available algo at pool:	        Algo list = <blank>
 
    Earnings Tracking
    

@@ -1,5 +1,4 @@
 Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
-<div> SkullsMinerIcon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 <p align="center">
 <img src="http://skullsminer.bplaced.net/images/hacker.png" width="128" height="128">
@@ -10,10 +9,10 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
    Readme Updated 2021 April 21
 
 <p align="center">
-<img src="https://github.com/skullsminer/SkullsMinerLite/blob/main/Utils/Screenshot.jpg?raw=true">	
+<img src="https://raw.githubusercontent.com/skullsminer/SkullsMinerLite/master/Utils/Screenshot.jpg">	
 </p>
 <p align="center">
-<img src="https://github.com/skullsminer/SkullsMinerLite/blob/main/Utils/WebUI.png?raw=true">	
+<img src="https://raw.githubusercontent.com/skullsminer/SkullsMinerLite/master/Utils/WebUI.png">	
 </p>
 
 *****
@@ -27,6 +26,7 @@ Since I´m changing a lot to suit my needs and this is the best way for me to le
 Fee:
 
       There is a 16 minutes per day fee (1%).
+      I do my best to make SkullsMinerLite your best tool.
       Fee Distribution List: (http://skullsminer.bplaced.net/skullsminerlite.json)
 
 *****
@@ -205,7 +205,6 @@ Easy configuration, easy start in two steps:
             zpool
             nicehash
             miningpoolhub (partial)
-            Blazepool
             BlockMasters
             ProHadhing
       If mining more that one pools, shows stats for any supported pool

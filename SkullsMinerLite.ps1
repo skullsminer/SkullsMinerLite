@@ -514,6 +514,7 @@ Function PrepareWriteConfig{
     $ConfigPageControls | ? {(($_.gettype()).Name -eq "TextBox") -and ($_.Tag -eq "Algorithm")} | foreach {
         $Config | Add-Member -Force @{$_.Tag = @($_.Text -split ",")}
     }
+
     $ConfigPageControls | ? {(($_.gettype()).Name -eq "TextBox") -and ($_.Tag -in @("Donate","Interval","ActiveMinerGainPct"))} | foreach {
         $Config | Add-Member -Force @{$_.Tag = [Int]$_.Text}
     }
@@ -874,11 +875,22 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $EarningsDGV.AutoSizeColumnsMode                        = "Fill"
     $EarningsDGV.RowHeadersVisible                          = $False
     $RunPageControls += $EarningsDGV
+	
+	$LabelBonus                    = New-Object System.Windows.Forms.LinkLabel
+    # $LabelBonus.Location           = New-Object System.Drawing.Size(415,39)
+    # $LabelBonus.Size               = New-Object System.Drawing.Size(160,18)
+    $LabelBonus.Location           = New-Object System.Drawing.Size(350,246)
+    $LabelBonus.Size               = New-Object System.Drawing.Size(160,20)
+    $LabelBonus.LinkColor          = "BLUE"
+    $LabelBonus.ActiveLinkColor    = "BLUE"
+    $LabelBonus.Text               = "ProHashing 0.50% Bonus"
+    $LabelBonus.add_Click({[system.Diagnostics.Process]::start("https://prohashing.com?r=VaP0CpNE")})
+    $RunPageControls += $LabelBonus
 
     $LabelCopyright                 = New-Object System.Windows.Forms.LinkLabel
     # $LabelCopyright.Location        = New-Object System.Drawing.Size(415,61)
     # $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelCopyright.Location        = New-Object System.Drawing.Size(395,246)
+    $LabelCopyright.Location        = New-Object System.Drawing.Size(520,246)
     $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
     $LabelCopyright.LinkColor       = "BLUE"
     $LabelCopyright.ActiveLinkColor = "BLUE"
@@ -889,7 +901,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelWebUI                 = New-Object System.Windows.Forms.LinkLabel
     # $LabelWebUI.Location        = New-Object System.Drawing.Size(415,61)
     # $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelWebUI.Location        = New-Object System.Drawing.Size(250,246)
+    $LabelWebUI.Location        = New-Object System.Drawing.Size(150,246)
     $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
     $LabelWebUI.LinkColor       = "BLUE"
     $LabelWebUI.ActiveLinkColor = "BLUE"
@@ -929,7 +941,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $SwitchingPageControls = @()
     
     $CheckShowSwitchingCPU                       = New-Object system.Windows.Forms.CheckBox
-    $CheckShowSwitchingCPU.Tag                       = "CPU"
+    $CheckShowSwitchingCPU.Tag                   = "CPU"
     $CheckShowSwitchingCPU.text                  = "CPU"
     $CheckShowSwitchingCPU.AutoSize              = $false
     $CheckShowSwitchingCPU.width                 = 60

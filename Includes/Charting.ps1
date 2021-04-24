@@ -65,9 +65,9 @@ $scriptpath = Split-Path -parent $MyInvocation.MyCommand.Definition
     https://cssgradient.io/
     
     Default
-    "ChartGradientMaxColor":  "087d01",
-    "ChartGradientMidColor":  "b9ba00",
-    "ChartGradientMinColor":  "7c0000",
+    "ChartGradientMaxColor":  "50bd86",
+    "ChartGradientMidColor":  "17bde0",
+    "ChartGradientMinColor":  "0e85c9",
     
     Red, Yellow, Green
     "ChartGradientMaxColor":  "008000",
@@ -75,9 +75,9 @@ $scriptpath = Split-Path -parent $MyInvocation.MyCommand.Definition
     "ChartGradientMinColor":  "FF0000",
 #>
 
-$StartColor     = If ($Config.ChartGradientMinColor) {$Config.ChartGradientMinColor} else {"800000"}
-$MidColor       = If ($Config.ChartGradientMidColor) {$Config.ChartGradientMidColor} else {"b85300"} #795f09
-$EndColor       = If ($Config.ChartGradientMaxColor) {$Config.ChartGradientMaxColor} else {"f2a900"}
+$StartColor     = If ($Config.ChartGradientMinColor) {$Config.ChartGradientMinColor} else {"0e85c9"}
+$MidColor       = If ($Config.ChartGradientMidColor) {$Config.ChartGradientMidColor} else {"17bde0"} #795f09
+$EndColor       = If ($Config.ChartGradientMaxColor) {$Config.ChartGradientMaxColor} else {"50bd86"}
 
 Switch ($Chart) {
     "Front7DaysEarnings" {

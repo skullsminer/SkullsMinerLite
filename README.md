@@ -5,7 +5,8 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 </p>
 
  # SkullsMinerLite   - NVIDIA | AMD | CPU
-  
+[![Downloads](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg)](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg) 
+[![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/master/LICENSE)
    Readme Updated 2021 April 21
 
 <p align="center">

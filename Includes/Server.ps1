@@ -195,15 +195,15 @@ Function Start-Server {
                         Worker Name: <a href="./Status">$($Config.WorkerName)</a> 
                         &nbsp&nbsp&nbsp Average Profit:  $(((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum)).DisplayStringPerDay)
                         &nbsp&nbsp&nbsp $(If($Variables.Rates.($Config.Currency) -gt 0){"$($Config.Passwordcurrency)/$($Config.Currency) $($Variables.Rates.($Config.Currency).ToString("N2"))"})
-                        </header>
+						</header>
                         <hr>
                         <a href="./RunningMiners">Running Miners</a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="./Benchmarks">Benchmarks</a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="./SwitchingLog">Switching log</a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="./Hardware">Hardware</a>
 "@
 
                     If ($Variables.Paused) {
-                        $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/flat_round/64/000000/play--v1.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Mine"">Start Mining</a>"
+                        $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/dusk/64/000000/circled-play.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Mine"">Start Mining</a>"
                     } Else {
-                        $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/flat_round/64/000000/pause--v1.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Pause"">Pause Mining</a>"
+                        $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/dusk/64/000000/circled-pause.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Pause"">Pause Mining</a>"
                     }
 
                     If (Test-Path ".\Config\Peers.json") {
@@ -431,29 +431,29 @@ Function Start-Server {
                                 $EarningsTrends = [PSCustomObject]@{}
                                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth1 -Sum).sum*1000*24),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum*1000*4),3)) {
                                         {$_ -eq 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/metro/26/000000/equal-sign-2.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/bullish.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/bearish.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  1h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth1 -Sum).sum 24)).DisplayStringPerDay}
                                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum*1000*4),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum*1000),3)) {
                                         {$_ -eq 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/metro/26/000000/equal-sign-2.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bullish.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bearish.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  6h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum 4)).DisplayStringPerDay}
                                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum*1000),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property BTCD -Sum).sum*1000*0.96),3)) {
                                         {$_ -eq 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/metro/26/000000/equal-sign-2.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bullish.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/color/26/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bearish.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  24h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum)).DisplayStringPerDay}
                                     $Header += $EarningsTrends | ConvertTo-Html -CssUri "./Includes/Web.css" 
@@ -551,7 +551,7 @@ Function Start-Server {
                                             # @{Name = "Pool"; Expression={$_.Pools.PSObject.Properties.Value | ForEach {"$($_.Name)"}}} ) | sort Rig,Type
                                             @{Name = "Pool"; Expression={$_.Pools.PSObject.Properties.Value | ForEach {"<img src=""$(Get-PoolIcon ($_.Name))"" alt="" "" width=""16""></img>&nbsp&nbsp" + $_.Name}}} ) | sort Rig,Type
                                         ) | ConvertTo-Html -CssUri "./Includes/Web.css"
-                                # $MinersTable = $MinersTable -Replace "###CoinIcon###", "<img src=""https://cryptoicons.org/api/icon/"
+                                # $MinersTable = $MinersTable -Replace "###CoinIcon###", "<img src=""https://github.com/TokenTax/cryptoicon-api/tree/master/public/icons/128/color"
                                 # $MinersTable = $MinersTable -Replace "###IconSize###", "/16"" alt="" ""></img>&nbsp&nbsp"
                                 
                                 $MinersTable = [System.Web.HttpUtility]::HtmlDecode($MinersTable)
@@ -621,7 +621,7 @@ Function Start-Server {
                                             @{Name = "Total Active";Expression={"{0:dd}:{0:hh}:{0:mm}:{0:ss}" -f [TimeSpan]$_.TotalActive.Ticks}},
                                             @{Name = "Pool"; Expression={$_.Pools.PSObject.Properties.Value | ForEach {"$($_.Name)"}}} ) | sort Rig,Type
                                         ) | ConvertTo-Html -CssUri "./Includes/Web.css" -Title $Title -PreContent $Header
-                                $MinersTable = $MinersTable -Replace "###CoinIcon###", "<img src=""https://cryptoicons.org/api/icon/"
+                                $MinersTable = $MinersTable -Replace "###CoinIcon###", "<img src=""https://github.com/skullsminer/cryptoicon-api/tree/master/public/icons/128/color"
                                 $MinersTable = $MinersTable -Replace "###IconSize###", "/16"" alt="" ""></img>&nbsp&nbsp"
                                 $Content = $MinersTable
                                 # $Content = $Header + $Content
@@ -774,7 +774,7 @@ Function Start-Server {
                                 $Variables.CoinsIconCachePopulating = $False
                                 
                                 $Title = "CleanIconCache"
-                                $Content = "OK"
+                                $Content = "OK Done, go back to http://localhost:Port/status"
                                 $StatusCode  = [System.Net.HttpStatusCode]::OK
                                 Break
                         }
@@ -785,7 +785,7 @@ Function Start-Server {
                                 $Variables.RestartCycle = $True
                                 
                                 $Title = "Pause Command"
-                                $Content = "OK"
+                                $Content = "OK Paused, go back to http://localhost:Port/status"
                                 $StatusCode  = [System.Net.HttpStatusCode]::OK
                                 Break
                         }
@@ -797,7 +797,7 @@ Function Start-Server {
                                 $Variables.RestartCycle = $True
                                 
                                 $Title = "Mine Command"
-                                $Content = "OK"
+                                $Content = "OK Started, go back to http://localhost:Port/status"
                                 $StatusCode  = [System.Net.HttpStatusCode]::OK
                                 Break
                         }
@@ -806,7 +806,7 @@ Function Start-Server {
                                 If (Test-Path ".\Config\Peers.json") {Remove-Item -Recurse -Force ".\Config\Peers.json"}
                                 
                                 $Title = "Peers Reset"
-                                $Content = "OK"
+                                $Content = "OK Done, go back to http://localhost:Port/status"
                                 $StatusCode  = [System.Net.HttpStatusCode]::OK
                                 Break
                         }

@@ -11,6 +11,13 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 
 <p align="center">
 Readme Updated 2021 April 25
+<p align="center">
+<img src="http://skullsminer.bplaced.net/images/Screen.jpg">	
+</p>
+<p align="center">
+<img src="http://skullsminer.bplaced.net/images/UI.png">	
+</p>
+*****
 </p>
 *****
 
@@ -31,13 +38,6 @@ Fee:
       I do my best to make SkullsMinerLite your best tool.
       Fee Distribution List: (http://skullsminer.bplaced.net/skullsminerlite.json)
 
-*****
-<p align="center">
-<img src="http://skullsminer.bplaced.net/images/Screen.jpg">	
-</p>
-<p align="center">
-<img src="http://skullsminer.bplaced.net/images/UI.png">	
-</p>
 *****
 
 SkullsMinerLite Monitors mining pools in real-time in order to find the most profitable Algo

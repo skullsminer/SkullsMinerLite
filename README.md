@@ -74,7 +74,7 @@ Easy configuration, easy start in two steps:
 - [HashCryptos](https://www.hashcryptos.com)
 
 
-   AI
+   Deep Data Analysis
    
       SkullsMinerLite provides deep data analysis to lead to the best mining decisions.
       BrainPlus is the Core brain computing these calculations and criteria.
@@ -84,8 +84,8 @@ Easy configuration, easy start in two steps:
    
       SkullsMinerLite has a GUI making it easy to configure and run.
       Relies on config files. Simply run SkullsMinerLite 
-      Set your wallet address and hit start
-	  If you are using NiceHash &/or HashCryptos, Open the PoolsConfig.json file in the config folder and enter your wallet adress here
+      Set your wallet address and hit start!
+	  If you are using NiceHash, ProHashing &/or HashCryptos, Open the PoolsConfig.json file in the config folder and enter your wallet adress here.
       For console lovers. Run SkullsMinerLite-ConsoleUp.
  
    AutoUpdate

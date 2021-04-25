@@ -59,19 +59,22 @@
                      "UserName":  "skullsminer",
                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
                      "WorkerName":  "ID=skullsminerlite",
-                     "PricePenaltyFactor":  1
+                     "PricePenaltyFactor":  1,
+                     "APIKey":  ""
                  },
     "prohashing24hr":  {
                          "UserName":  "skullsminer",
                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
                          "WorkerName":  "ID=skullsminerlite",
-                         "PricePenaltyFactor":  1
+                         "PricePenaltyFactor":  1,
+                         "APIKey":  ""
                      },
     "prohashingplus":  {
                          "UserName":  "skullsminer",
                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
                          "WorkerName":  "ID=skullsminerlite",
-                         "PricePenaltyFactor":  1
+                         "PricePenaltyFactor":  1,
+                         "APIKey":  ""
                      },
 
     "zergpool":  {

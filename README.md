@@ -33,10 +33,10 @@ Fee:
 
 *****
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/Screenshot.jpg">	
+<img src="http://skullsminer.bplaced.net/images/Screen.jpg">	
 </p>
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/WebUI.png">	
+<img src="http://skullsminer.bplaced.net/images/UI.png">	
 </p>
 *****
 

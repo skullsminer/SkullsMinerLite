@@ -17,8 +17,11 @@ Readme Updated 2021 April 25
 <p align="center">
 <img src="http://skullsminer.bplaced.net/images/UI.png">	
 </p>
+
 *****
+
 ## CREDITS
+
 *****
 The miner script has been forked from NplusMiner, for my private use only.
 Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.

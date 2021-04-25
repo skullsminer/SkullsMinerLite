@@ -18,9 +18,6 @@ Readme Updated 2021 April 25
 <img src="http://skullsminer.bplaced.net/images/UI.png">	
 </p>
 *****
-</p>
-*****
-
 ## CREDITS
 *****
 The miner script has been forked from NplusMiner, for my private use only.

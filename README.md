@@ -12,8 +12,6 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 <p align="center">
 Readme Updated 2021 April 25
 </p>
-
-
 *****
 
 ## CREDITS
@@ -33,6 +31,13 @@ Fee:
       I do my best to make SkullsMinerLite your best tool.
       Fee Distribution List: (http://skullsminer.bplaced.net/skullsminerlite.json)
 
+*****
+<p align="center">
+<img src="http://skullsminer.bplaced.net/images/Screenshot.jpg">	
+</p>
+<p align="center">
+<img src="http://skullsminer.bplaced.net/images/WebUI.png">	
+</p>
 *****
 
 SkullsMinerLite Monitors mining pools in real-time in order to find the most profitable Algo
@@ -54,6 +59,8 @@ Easy configuration, easy start in two steps:
       1. Enter your BTC address and hit Save Config
       2. Hit "Start"
 
+*****
+If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
 *****
 
 ## Features list
@@ -81,7 +88,7 @@ Easy configuration, easy start in two steps:
       SkullsMinerLite has a GUI making it easy to configure and run.
       Relies on config files. Simply run SkullsMinerLite 
       Set your wallet address and hit start!
-	  If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
+      If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
       For console lovers. Run SkullsMinerLite-ConsoleUp.
  
    AutoUpdate

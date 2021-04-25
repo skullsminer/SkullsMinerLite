@@ -8,7 +8,7 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 [![Downloads](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg)](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg) 
 [![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE)
 [![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
-[![Version prereleasedate tag](https://img.shields.io/github/prerelease-date/skullsminer/SkullsMinerLite.svg)](https://img.shields.io/github/v/release/skullsminer/skullsminerlite?include_prereleases)
+[![Version prereleasedate tag](https://img.shields.io/github/v/release/skullsminer/skullsminerlite/SkullsMinerLite.svg)](https://img.shields.io/github/v/release/skullsminer/skullsminerlite?include_prereleases)
 
 <p align="center">
 Readme Updated 2021 April 25

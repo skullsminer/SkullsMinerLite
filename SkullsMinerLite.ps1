@@ -175,7 +175,7 @@ Function Global:TimerUITick
             If (Test-Path ".\Logs\switching.log"){$SwitchingArray = [System.Collections.ArrayList]@(@((get-content ".\Logs\switching.log" -First 1) , (get-content ".\logs\switching.log" -last 50)) | ConvertFrom-Csv | ? {$_.Type -in $SwitchingDisplayTypes} | Select -Last 13)}
             $SwitchingDGV.DataSource = $SwitchingArray
             
-            # Fixed memory leak to to chart object not being properly disposed in 5.3.0
+            # Fixed memory leak to to chart object not being properly disposed
             # https://stackoverflow.com/questions/8466343/why-controls-do-not-want-to-get-removed
 
             If (Test-Path ".\logs\DailyEarnings.csv"){

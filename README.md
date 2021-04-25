@@ -8,6 +8,8 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 [![Downloads](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg)](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg) 
 [![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE)
 [![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
+[![Version prereleasedate tag](https://img.shields.io/github/prerelease-date/skullsminer/SkullsMinerLite.svg)](https://img.shields.io/github/v/release/skullsminer/skullsminerlite?include_prereleases)
+
 <p align="center">
 Readme Updated 2021 April 25
 </p>
@@ -85,7 +87,7 @@ Easy configuration, easy start in two steps:
       SkullsMinerLite has a GUI making it easy to configure and run.
       Relies on config files. Simply run SkullsMinerLite 
       Set your wallet address and hit start!
-	  If you are using NiceHash, ProHashing &/or HashCryptos, Open the PoolsConfig.json file in the config folder and enter your wallet adress here.
+	  If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
       For console lovers. Run SkullsMinerLite-ConsoleUp.
  
    AutoUpdate

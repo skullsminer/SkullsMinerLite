@@ -212,7 +212,7 @@ Easy configuration, easy start in two steps:
             nicehash
             miningpoolhub (partial)
             BlockMasters
-            ProHadhing
+            ProHashing
       If mining more that one pools, shows stats for any supported pool
       Press key e in the console window to show/hide earnings
 

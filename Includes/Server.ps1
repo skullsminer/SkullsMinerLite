@@ -433,27 +433,27 @@ Function Start-Server {
                                         {$_ -eq 0}
                                             {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/64/000000/bullish-trade.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/64/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/64/000000/bearish-trade.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  1h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth1 -Sum).sum 24)).DisplayStringPerDay}
                                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum*1000*4),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum*1000),3)) {
                                         {$_ -eq 0}
                                             {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/26/000000/bullish-trade.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/26/000000/bearish-trade.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  6h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum 4)).DisplayStringPerDay}
                                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum*1000),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property BTCD -Sum).sum*1000*0.96),3)) {
                                         {$_ -eq 0}
                                             {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/equal-sign.png alt="" ""  width=""16"">"}
                                         {$_ -gt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bullish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/26/000000/bullish-trade.png alt="" ""  width=""16"">"}
                                         {$_ -lt 0}
-                                            {"&nbsp&nbsp<img src=https://img.icons8.com/dusk/26/000000/bearish.png alt="" ""  width=""16"">"}
+                                            {"&nbsp&nbsp<img src=https://img.icons8.com/cotton/26/000000/bearish-trade.png alt="" ""  width=""16"">"}
                                     }
                                 $EarningsTrends | Add-Member -Force @{"Last  24h $TrendSign" = ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum)).DisplayStringPerDay}
                                     $Header += $EarningsTrends | ConvertTo-Html -CssUri "./Includes/Web.css" 

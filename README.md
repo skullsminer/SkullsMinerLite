@@ -28,7 +28,7 @@ Since I´m changing a lot to suit my needs and this is the best way for me to le
 
 **SkullsMinerIcon: Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
-**SkullsMiner: Some Icons used from <a href="https://icons8.com" title="icons8.com"></a>
+**SkullsMiner: Some Icons used from <a href="https://icons8.com" title="icons8.com">icons8</a>
 
 
 Fee:

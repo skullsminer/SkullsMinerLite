@@ -11,17 +11,17 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 
 <p align="center">
 Readme Updated 2021 April 25
+<p align="center">
+<img src="http://skullsminer.bplaced.net/images/Screen.jpg">	
 </p>
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/Screenshot.jpg">	
-</p>
-<p align="center">
-<img src="http://skullsminer.bplaced.net/images/WebUI.png">	
+<img src="http://skullsminer.bplaced.net/images/UI.png">	
 </p>
 
 *****
 
 ## CREDITS
+
 *****
 The miner script has been forked from NplusMiner, for my private use only.
 Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
@@ -60,6 +60,8 @@ Easy configuration, easy start in two steps:
       2. Hit "Start"
 
 *****
+If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
+*****
 
 ## Features list
 
@@ -86,7 +88,7 @@ Easy configuration, easy start in two steps:
       SkullsMinerLite has a GUI making it easy to configure and run.
       Relies on config files. Simply run SkullsMinerLite 
       Set your wallet address and hit start!
-	  If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
+      If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
       For console lovers. Run SkullsMinerLite-ConsoleUp.
  
    AutoUpdate
@@ -212,7 +214,7 @@ Easy configuration, easy start in two steps:
             nicehash
             miningpoolhub (partial)
             BlockMasters
-            ProHadhing
+            ProHashing
       If mining more that one pools, shows stats for any supported pool
       Press key e in the console window to show/hide earnings
 

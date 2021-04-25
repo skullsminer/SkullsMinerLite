@@ -9,7 +9,7 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 [![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE)
 [![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
 <p align="center">
-Readme Updated 2021 April 21
+Readme Updated 2021 April 25
 </p>
 <p align="center">
 <img src="http://skullsminer.bplaced.net/images/Screenshot.jpg">	
@@ -80,8 +80,9 @@ Easy configuration, easy start in two steps:
    GUI
    
       SkullsMinerLite has a GUI making it easy to configure and run.
-      Relies on config files. No need to edit bat files. Simply run SkullsMinerLite 
+      Relies on config files. Simply run SkullsMinerLite 
       Set your wallet address and hit start
+	  If you are using NiceHash &/or HashCryptos, Open the PoolsConfig.json file in the config folder and enter your wallet adress here
       For console lovers. Run SkullsMinerLite-ConsoleUp.
  
    AutoUpdate
@@ -161,11 +162,11 @@ Easy configuration, easy start in two steps:
 
       There is a 16 minutes per day fee (1%)
       
-      We use a fair fee distribution to developers and contributors. Fees are distibuted randomly
-      to a public list of devs which can be found here: http://skullsminer.bplaced.net/skullsminerlite.json
+      Fees are distibuted randomly to a public list of devs which can be found here: 
+	  http://skullsminer.bplaced.net/skullsminerlite.json
       
-      We want to stay completely transparent on the way fees are managed in the product.
-      Fees cycle occurs once every 12 hours for the selected amount of time (10 minutes).
+      I want to stay completely transparent on the way fees are managed in the product.
+      Fees cycle occurs once every 12 hours for the selected amount of time (8 minutes).
       The first donation sequence occurs 1 hour after miners are started.
       If Interval is set higher than the donation time, the interval will prime.
       Example for default parameters:
@@ -248,20 +249,18 @@ Easy configuration, easy start in two steps:
 If you have Windows 8, or 8.1, please update PowerShell:
 https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
-Some miners may need 'Visual C++ 2013' if you don't already have it: (install both x86 & x64) Visual C++ Redistributable for Visual Studio 2012/2013: https://www.microsoft.com/en-US/download/details.aspx?id=40784
+Some miners may need 'Visual C++ 2013' if you don't already have it: Visual C++ Redistributable for Visual Studio 2012/2013: https://www.microsoft.com/en-US/download/details.aspx?id=40784
 
-Some miners may need 'Visual C++ 2015' if you don't already have it: (install both x86 & x64) Visual C++ Redistributable for Visual Studio 2014/2015: https://www.microsoft.com/en-US/download/details.aspx?id=48145
+Some miners may need 'Visual C++ 2015' if you don't already have it: Visual C++ Redistributable for Visual Studio 2014/2015: https://www.microsoft.com/en-US/download/details.aspx?id=48145
 
-Some miners may need 'Visual C++ 2015 update 3' if you don't already have it: (install both x86 & x64) Visual C++ Redistributable for Visual Studio 2015 update 3: https://www.microsoft.com/en-us/download/details.aspx?id=53587
+Some miners may need 'Visual C++ 2015 update 3' if you don't already have it: Visual C++ Redistributable for Visual Studio 2015 update 3: https://www.microsoft.com/en-us/download/details.aspx?id=53587
 
-running multiple cards its recommended to increase Virtual Memory 64gb is optimal
+Running multiple cards its recommended to increase Virtual Memory 64gb is optimal
 
 Requires Nvidia driver 431.86: https://www.geforce.com/drivers
 
 Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-archive 
 CAUTION: During the CudaSetup choose CUDA to be installed only!
-
-Made For & Tested with 6x1070 6x1070ti 6x1080 6x1080ti 9x1660ti 6x2060 6x2070 6x2080 6x2080ti(users have reported up to 12cards working have not tested myself) Some miners do not support more than 9 cards
 
 *****
 

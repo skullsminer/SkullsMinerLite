@@ -395,6 +395,16 @@ $CycleScriptBlock =  {
                 $Miner_Profits_Bias = [PSCustomObject]@{}
                 $Miner_Types = $Miner.Type | Select -Unique
                 $Miner_Indexes = $Miner.Index | Select -Unique
+                # $Miner.HashRates | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
+                    # $LocPool = $Pools.$_ | Where {$_.Host -eq $Miner.Host -and $_.Coin -eq $Miner.Coin}
+                    # $LocPoolsComp = $Pools_Comparison.$_ | Where {$_.Host -eq $Miner.Host -and $_.Coin -eq $Miner.Coin}
+                    # $Miner_HashRates | Add-Member $_ ([Double]$Miner.HashRates.$_)
+                    # $Miner_Pools | Add-Member $_ ([PSCustomObject]$LocPool)
+                    # $Miner_Pools_Comparison | Add-Member $_ ([PSCustomObject]$LocPoolsComp | Where {$_.Host -eq $Miner.Host -and $_.Coin -eq $Miner.Coin})
+                    # $Miner_Profits | Add-Member $_ ([Double]$Miner.HashRates.$_*$LocPool.Price)
+                    # $Miner_Profits_Comparison | Add-Member $_ ([Double]$Miner.HashRates.$_*$LocPoolsComp.Price)
+                    # $Miner_Profits_Bias | Add-Member $_ ([Double]$Miner.HashRates.$_*$LocPool.Price*(1-($Config.MarginOfError*[Math]::Pow($Variables.DecayBase,$DecayExponent))))
+                # }
                 $Miner.HashRates | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
                     $LocPool = $Pools.$_ | Where {$_.Host -in $Miner.Host -and $_.Coin -in $Miner.Coin} 
                     $LocPoolsComp = $Pools_Comparison.$_ | Where {$_.Host -in $Miner.Host -and $_.Coin -in $Miner.Coin} 
@@ -435,7 +445,7 @@ $CycleScriptBlock =  {
                 $Miner | Add-Member Profit_Bias_Orig $Miner_Profit_Bias
                 $Miner | Add-Member Type $Miner_Types -Force
                 $Miner | Add-Member Index $Miner_Indexes -Force
-                #$Miner.Path = Convert-Path $Miner.Path
+                # $Miner.Path = Convert-Path $Miner.Path
 
                 $Miner_Devices = $Miner.Device | Select -Unique
                 if($Miner_Devices -eq $null){$Miner_Devices = (@($Variables["Miners"]).Where({(Compare $Miner.Type $_.Type -IncludeEqual -ExcludeDifferent | Measure).Count -gt 0})).Device | Select -Unique}
@@ -802,7 +812,7 @@ $CycleScriptBlock =  {
         $Variables.StatusText = "Waiting $($Variables.TimeToSleep) seconds... | Next refresh: $((Get-Date).AddSeconds($Variables.TimeToSleep)) | Donation running. Thanks for your support!"
     } else {
         $Variables.StatusText = "Waiting $($Variables.TimeToSleep) seconds... | Next refresh: $((Get-Date).AddSeconds($Variables.TimeToSleep))"
-        $Variables.StatusText = "!! Check out the new server features and remote management web interface !!"
+        $Variables.StatusText = "!! Happy Mining :) !!"
     }
     $Variables.EndLoop = $True
     # Sleep $Variables.TimeToSleep

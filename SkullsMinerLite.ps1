@@ -40,7 +40,7 @@ param(
     [Parameter(Mandatory=$false)]
     [String]$Proxy = "", #i.e http://192.0.0.1:8080 
     [Parameter(Mandatory=$false)]
-    [Int]$Delay = 1, #seconds before opening each miner
+    [Int]$Delay = 2, #seconds before opening each miner
     [Parameter(Mandatory=$false)]
     [Int]$GPUCount = 1, # Number of GPU on the system
     [Parameter(Mandatory=$false)]
@@ -1780,11 +1780,26 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxLowPriorityForCPUMiners.height = 20
     $CheckBoxLowPriorityForCPUMiners.location = New-Object System.Drawing.Point(560, 222)
     $CheckBoxLowPriorityForCPUMiners.Font = 'Microsoft Sans Serif,10'
-    $CheckBoxLowPriorityForCPUMiners.Checked = $Config.OrphanBlocksPenalty
+    $CheckBoxLowPriorityForCPUMiners.Checked = $Config.UseLowPriorityForCPUMiners
     $ConfigPageControls += $CheckBoxLowPriorityForCPUMiners
 
     $CheckBoxOrphanBlocksPenalty.Add_Click( {
                 $Config.UseLowPriorityForCPUMiners = $CheckBoxOrphanBlocksPenalty.Checked
+    })
+	
+	$CheckBoxIncludeOptionalMiners = New-Object system.Windows.Forms.CheckBox
+    $CheckBoxIncludeOptionalMiners.Tag = "IncludeOptionalMiners"
+    $CheckBoxIncludeOptionalMiners.text = "IncludeOptionalMiners"
+    $CheckBoxIncludeOptionalMiners.AutoSize = $false
+    $CheckBoxIncludeOptionalMiners.width = 160
+    $CheckBoxIncludeOptionalMiners.height = 20
+    $CheckBoxIncludeOptionalMiners.location = New-Object System.Drawing.Point(560, 244)
+    $CheckBoxIncludeOptionalMiners.Font = 'Microsoft Sans Serif,10'
+    $CheckBoxIncludeOptionalMiners.Checked = $Config.IncludeOptionalMiners
+    $ConfigPageControls += $CheckBoxIncludeOptionalMiners
+
+    $CheckBoxOrphanBlocksPenalty.Add_Click( {
+                $Config.IncludeOptionalMiners = $CheckBoxOrphanBlocksPenalty.Checked
     })
 
     $CheckBoxConsole = New-Object system.Windows.Forms.CheckBox

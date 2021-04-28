@@ -25,7 +25,7 @@ Readme Updated 2021 April 25
 *****
 The miner script has been forked from NplusMiner, for my private use only.
 Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
-!!!!Credit to MrPlus (https://github.com/MrPlusGH/NPlusMiner) & NemosMiner (https://github.com/Minerx117/NemosMiner)!!!
+!!!!Credit to <a href="https://github.com/MrPlusGH/NPlusMiner" title="NPlusMiner">MrPlus</a> &<a href="https://github.com/Minerx117/NemosMiner" title="Minerx117">NemosMiner</a>!!!
 
 **SkullsMinerLiteMainIcon: Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
@@ -54,7 +54,7 @@ SkullsMinerLite Monitors mining pools in real-time in order to find the most pro
 
 Easy configuration, easy start in two steps:
 
-      Run SkullsMinerLite
+      Run SKMLAsAdmin
 
       1. Enter your BTC address and hit Save Config
       2. Hit "Start"
@@ -94,6 +94,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
    AutoUpdate
    
       AutoUpdate feature included
+	  Every 24h AutoUpdateCheck
       
    Auto Ban miners
    
@@ -135,10 +136,10 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
 	    **Do not delete the default entry.**
             - Edit Config\PoolsConfig.json
             - Add an entry for the pool you want to customize
-              - The name must be the SkullsMinerLite name for the pool. ie. for ahashpool, if you use Plus. The name is ahashpoolplus.
-              - (**careful with json formating ;)**)
+              - Example: for ahashpool, if you use Plus. The name is ahashpoolplus.
+              - (**be careful with json formating ;)**)
               - Best way is to duplicate the default entry
-        - Note that the GUI only updates the default entry. Any other changes need to be done manualy
+        - Note that the GUI only updates the default entry. Any other changes need to be done manually
 
    PricePenaltyFactor (Advanced)
 
@@ -147,7 +148,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
           - NiceHash as a 4% fee - Set PricePenaltyFactor to 0.96 (1-0.04)
           - You feel like a pool is exaggerating his estimations by 10% - Set PricePenaltyFactor to 0.9
 
-   BrainPlus - ahashpoolplus / zergpoolplus / zpoolplus / BlockMastersPlus / PhiPhiPoolPlus / StarPoolPlus / HashRefineryPlus
+   BrainPlus - ahashpoolplus / zergpoolplus / zpoolplus / blockmastersplus / miningdutchplus / nlpoolplus / prohashingplus
 
       Uses calculations based on 24hractual and currentestimate ahashpool prices to get more realistic estimate.
       Includes some trust index based on past 1hr currentestimate variation from 24hr.
@@ -159,7 +160,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
 
       24hr - uses last 24hour Actual API too request profit
          -Low switching rate
-      plus - uses advanced calculations to maximize profit (AI)
+      plus - uses advanced calculations to maximize profit (DeepDataAnalysis)
          -**Best switching rate**
       normal - uses current estimate API too request profit
          -High switching rate
@@ -168,7 +169,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
 
       There is a 16 minutes per day fee (1%)
       
-      Fees are distibuted randomly to a public list of devs which can be found here: 
+      Fees are distibuted randomly to a public list which can be found here: 
 	  http://skullsminer.bplaced.net/skullsminerlite.json
       
       I want to stay completely transparent on the way fees are managed in the product.
@@ -198,11 +199,11 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
       Do not combine + and - for the same algo
 
       Examples: 
-      Mine anything but x16r:			Algo list = -x16r
-      Mine anything but x16r and bcd:		Algo list = -x16r,-bcd
-      Mine only x16r:				Algo list = +x16r
-      Mine only x16r and BCD:			Algo list = +x16r,+bcd
-      Mine any available algo at pool:	        Algo list = <blank>
+      Mine anything but x16r:		   Algo list = -x16r
+      Mine anything but x16r and bcd:  Algo list = -x16r,-bcd
+      Mine only x16r:				   Algo list = +x16r
+      Mine only x16r and BCD:		   Algo list = +x16r,+bcd
+      Mine any available algo at pool: Algo list = <blank>
 
    Earnings Tracking
    
@@ -215,7 +216,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
             miningpoolhub (partial)
             BlockMasters
             ProHashing
-      If mining more that one pools, shows stats for any supported pool
+      If you are mining more than one pool,it shows stats for any supported pool
       Press key e in the console window to show/hide earnings
 
    Support running multiple instances

@@ -1,12 +1,13 @@
 if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
 
 $Path = ".\Bin\AMD-teamred081\teamredminer.exe"
-$Uri = "https://github.com/todxx/teamredminer/releases/download/0.8.2/teamredminer-v0.8.2-win.zip"
+$Uri = "https://github.com/todxx/teamredminer/releases/download/0.8.2.1/teamredminer-v0.8.2.1-win.zip"
 
 $Commands = [PSCustomObject]@{
     "etchash"= " --algo etchash" #etchash
     "ethash" = " --algo ethash"  #ethash
     "kawpow" = " --algo kawpow"  #kawpow
+	"verthash" = " --algo verthash" #kawpow
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

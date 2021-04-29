@@ -36,7 +36,7 @@ param(
     [Parameter(Mandatory=$false)]
     [Array]$Passwordcurrency = ("BTC"), #i.e. BTC,LTC,ZEC,ETH ect.
     [Parameter(Mandatory=$false)]
-    [Int]$Donate = 16, #Minutes per Day
+    [Int]$Donate = 15, #Minutes per Day
     [Parameter(Mandatory=$false)]
     [String]$Proxy = "", #i.e http://192.0.0.1:8080 
     [Parameter(Mandatory=$false)]
@@ -106,7 +106,7 @@ Write-Host -F Yellow " Copyright and license notices must be preserved."
         $Branding = Get-Content ".\Config\Branding.json" | ConvertFrom-Json
     } Else {
         $Branding = [PSCustomObject]@{
-            LogoPath = "http://SkullsMiner.bplaced.net/images/hacker.png"
+            LogoPath = "https://skullsminer.net/images/hacker.png"
             BrandName = "SkullsMinerLite"
             BrandWebSite = "https://github.com/skullsminer/SkullsMinerLite"
             ProductLable = "SkullsMinerLite"
@@ -562,7 +562,7 @@ $MainForm.add_Shown({
     # Check if new version is available
     Update-Status("Checking version")
     try {
-        $Version = Invoke-WebRequest "http://skullsminer.bplaced.net/versionskullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Version = Get-content ".\Config\version.json" | Convertfrom-json}
+        $Version = Invoke-WebRequest "https://skullsminer.net/versionskullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Version = Get-content ".\Config\version.json" | Convertfrom-json}
     If ($Version -ne $null){$Version | ConvertTo-json | Out-File ".\Config\version.json"}
     If ($Version.Product -eq $Variables.CurrentProduct -and [Version]$version.Version -gt $Variables.CurrentVersion -and $Version.Update) {
         Update-Status("Version $($version.Version) available. (You are running $($Variables.CurrentVersion))")
@@ -598,7 +598,7 @@ $MainForm.add_Shown({
     $TimerCheckVersion.Add_Tick({
         Update-Status("Checking version")
         try {
-            $Version = Invoke-WebRequest "http://skullsminer.bplaced.net/versionskullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Version = Get-content ".\Config\version.json" | Convertfrom-json}
+            $Version = Invoke-WebRequest "https://skullsminer.net/versionskullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Version = Get-content ".\Config\version.json" | Convertfrom-json}
         If ($Version -ne $null){$Version | ConvertTo-json | Out-File ".\Config\version.json"}
         If ($Version.Product -eq $Variables.CurrentProduct -and [Version]$version.Version -gt $Variables.CurrentVersion -and $Version.Update) {
             Update-Status("Version $($version.Version) available. (You are running $($Variables.CurrentVersion))")
@@ -895,7 +895,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelCopyright.LinkColor       = "BLUE"
     $LabelCopyright.ActiveLinkColor = "BLUE"
     $LabelCopyright.Text            = "Copyright (c) 2021-$((Get-Date).year) Skulldeath"
-    $LabelCopyright.add_Click({[system.Diagnostics.Process]::start("http://skullsminer.bplaced.net/LICENSE")})
+    $LabelCopyright.add_Click({[system.Diagnostics.Process]::start("https://skullsminer.net/LICENSE")})
     $RunPageControls += $LabelCopyright
 
     $LabelWebUI                 = New-Object System.Windows.Forms.LinkLabel

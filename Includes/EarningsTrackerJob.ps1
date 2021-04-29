@@ -49,7 +49,7 @@ while ($true) {
 
     If (-not $poolapi -or ($LastAPIUpdateTime -le (Get-Date).AddDays(-1))){
         try {
-            $poolapi = Invoke-ProxiedWebRequest "http://skullsminer.bplaced.net/poolsapiref.json" -UseBasicParsing | ConvertFrom-Json} catch {$poolapi = Get-content ".\Config\poolapiref.json" | Convertfrom-json}
+            $poolapi = Invoke-ProxiedWebRequest "https://skullsminer.net/poolsapiref.json" -UseBasicParsing | ConvertFrom-Json} catch {$poolapi = Get-content ".\Config\poolapiref.json" | Convertfrom-json}
             $LastAPIUpdateTime = Get-Date
         } else {
             $poolapi = Get-content ".\Config\poolapiref.json" | Convertfrom-json

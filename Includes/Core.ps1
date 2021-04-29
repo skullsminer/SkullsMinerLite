@@ -221,12 +221,12 @@ $CycleScriptBlock =  {
         if((Get-Date).AddHours(-12) -ge $Variables.LastDonated -and $Variables.DonateRandom.wallet -eq $Null){
             # Get donation addresses randomly from agreed developers list
             # This will fairly distribute donations to Developers
-            # Developers list and wallets is publicly available at: http://skullsminer.bplaced.net/skullsminerlite.json
+            # Developers list and wallets is publicly available at: https://skullsminer.net/skullsminerlite.json
             $Variables.StatusText = "ENTERING DONATION"
             $Variables.DonationStart = $True 
             $Variables.DonationRunning = $False 
             $Config.PartyWhenAvailable = $False
-            try {$Donation = Invoke-WebRequest "http://skullsminer.bplaced.net/skullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Donation = @([PSCustomObject]@{Name = "skullsminer";Wallet = "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H";UserName = "skullsminer"},[PSCustomObject]@{Name = "mrpluscreditdonation";Wallet = "134bw4oTorEJUUVFhokDQDfNqTs7rBMNYy";UserName = "mrplus"},[PSCustomObject]@{Name = "nemocreditdonation";Wallet = "1QGADhdMRpp9Pk5u5zG1TrHKRrdK5R81TE";UserName = "nemo"})}
+            try {$Donation = Invoke-WebRequest "https://skullsminer.net/skullsminerlite.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json} catch {$Donation = @([PSCustomObject]@{Name = "skullsminer";Wallet = "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H";UserName = "skullsminer"},[PSCustomObject]@{Name = "mrpluscreditdonation";Wallet = "134bw4oTorEJUUVFhokDQDfNqTs7rBMNYy";UserName = "mrplus"},[PSCustomObject]@{Name = "nemocreditdonation";Wallet = "1QGADhdMRpp9Pk5u5zG1TrHKRrdK5R81TE";UserName = "nemo"})}
             if ($Donation -ne $null) {
                 If ($Config.Donate -lt 3) {$Config.Donate = (0,(3..8)) | Get-Random}
                 $Variables.DonateRandom = $Donation | Get-Random

@@ -1,7 +1,7 @@
 Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/hacker.png" width="128" height="128">
+<img src="https://skullsminer.net/images/hacker.png" width="128" height="128">
 </p>
 
  # SkullsMinerLite   - NVIDIA | AMD | CPU
@@ -12,10 +12,10 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 <p align="center">
 Readme Updated 2021 April 25
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/Screen.jpg">	
+<img src="https://skullsminer.net/images/Screen.jpg">	
 </p>
 <p align="center">
-<img src="http://skullsminer.bplaced.net/images/UI.png">	
+<img src="https://skullsminer.net/images/UI.png">	
 </p>
 
 *****
@@ -34,9 +34,9 @@ Since I´m changing a lot to suit my needs and this is the best way for me to le
 
 Fee:
 
-      There is a 16 minutes per day fee (1%).
+      There is a 15 minutes per day fee (1%).
       I do my best to make SkullsMinerLite your best tool.
-      Fee Distribution List: (http://skullsminer.bplaced.net/skullsminerlite.json)
+      Fee Distribution List: (https://skullsminer.net/skullsminerlite.json)
 
 *****
 
@@ -167,13 +167,13 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
 	 
    Developers and Contributors fee distribution
 
-      There is a 16 minutes per day fee (1%)
+      There is a 15 minutes per day fee (1%)
       
       Fees are distibuted randomly to a public list which can be found here: 
-	  http://skullsminer.bplaced.net/skullsminerlite.json
+	  https://skullsminer.net/skullsminerlite.json
       
       I want to stay completely transparent on the way fees are managed in the product.
-      Fees cycle occurs once every 12 hours for the selected amount of time (8 minutes).
+      Fees cycle occurs once every 12 hours for the selected amount of time (7.5 minutes).
       The first donation sequence occurs 1 hour after miners are started.
       If Interval is set higher than the donation time, the interval will prime.
       Example for default parameters:

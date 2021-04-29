@@ -116,7 +116,7 @@ Function Start-Server {
             $Branding = Get-Content ".\Config\Branding.json" | ConvertFrom-Json
         } Else {
             $Branding = [PSCustomObject]@{
-                LogoPath = "http://skullsminer.bplaced.net/images/icon.png"
+                LogoPath = "https://skullsminer.net/images/icon.png"
                 BrandName = "SkullsMinerLite"
                 BrandWebSite = "https://github.com/skullsminer/SkullsMinerLite"
                 ProductLable = "SkullsMinerLite"
@@ -184,7 +184,7 @@ Function Start-Server {
                     $Header =
 @"
                         <meta charset="utf-8"/>
-                        <link rel="icon" type="image/png" href="http://skullsminer.bplaced.net/images/icon.png">
+                        <link rel="icon" type="image/png" href="https://skullsminer.net/images/icon.png">
                         <header>
                         <img src=$($Branding.LogoPath)>
                         Copyright (c) 2021-$((Get-Date).year) Skulldeath

@@ -32,7 +32,7 @@ If (-not $AllVCOK) {
     Write-Host -F Red "Some dependencies are missing. Installing."
     Write-Host -F Yellow "Please answer YES when asked."
     Write-Host "Downloading..."
-    Expand-WebRequest "http://skullsminer.bplaced.net/programs/Visual-C-Runtimes.zip" (Split-Path ".\Utils\Prereq\Visual-C-Runtimes\install_all.bat")
+    Expand-WebRequest "https://skullsminer.net/programs/Visual-C-Runtimes.zip" (Split-Path ".\Utils\Prereq\Visual-C-Runtimes\install_all.bat")
     Write-Host "Installing..."
     Start-process ".\Utils\Prereq\Visual-C-Runtimes\install_all.bat" -Wait
 } Else {

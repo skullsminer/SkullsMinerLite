@@ -1289,7 +1289,7 @@ Function Autoupdate {
     # write-host "Checking autoupdate"
     $SkullsMinerLiteFileHash = (Get-FileHash ".\SkullsMinerLite.ps1").Hash
     try {
-        $AutoUpdateVersion = Invoke-WebRequest "http://skullsminer.bplaced.net/update.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
+        $AutoUpdateVersion = Invoke-WebRequest "https://skullsminer.net/update.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
     }
 	
     catch {$AutoUpdateVersion = Get-content ".\Config\AutoUpdateVersion.json" | Convertfrom-json}
@@ -1310,7 +1310,7 @@ Function Autoupdate {
              #Abort if failed
             Update-Status("Retrieving update CRC")
             try {
-                $UpdateCRC = Invoke-WebRequest "http://skullsminer.bplaced.net/crc.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
+                $UpdateCRC = Invoke-WebRequest "https://skullsminer.net/crc.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
                 $UpdateCRC = $UpdateCRC | ? {$_.Product -eq $AutoUpdateVersion.Product -and $_.Version -eq $AutoUpdateVersion.Version}
             }
             catch {Update-Status("Cannot get update CRC from server"); return}
@@ -1680,7 +1680,7 @@ Function Get-PoolIcon {
         $Variables.poolapiref = Get-Content ".\Config\poolapiref.json" | ConvertFrom-Json
     }
     If ($Pool -eq "DevFee") {
-        "http://skullsminer.bplaced.net/images/icon.png"
+        "https://skullsminer.net/images/icon.png"
     } else {
         ($Variables.poolapiref | ? {$_.Name -eq $Pool}).IconURi
     }

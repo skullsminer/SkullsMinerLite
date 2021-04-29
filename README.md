@@ -182,7 +182,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
 
    Miners Monitoring
 
-	  For the moment there is a local web interface
+	  There is a local WebInterface (localhost:yourport/status) and a MonitoringServer (https://www.skullsminer.net)
       SkullsMinerLite does not send any personal informations to servers. Only miner related info are collected as miner names and hashrates. Miners path are all expressed relative so we have no risk to send any personnal informations like username.
 
    Algo selection

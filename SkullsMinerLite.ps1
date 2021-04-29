@@ -895,7 +895,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelCopyright.LinkColor       = "BLUE"
     $LabelCopyright.ActiveLinkColor = "BLUE"
     $LabelCopyright.Text            = "Copyright (c) 2021-$((Get-Date).year) Skulldeath"
-    $LabelCopyright.add_Click({[system.Diagnostics.Process]::start("https://skullsminer.net/LICENSE")})
+    $LabelCopyright.add_Click({[system.Diagnostics.Process]::start("https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE")})
     $RunPageControls += $LabelCopyright
 
     $LabelWebUI                 = New-Object System.Windows.Forms.LinkLabel

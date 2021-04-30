@@ -86,7 +86,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
    Deep Data Analysis
    
       SkullsMinerLite provides deep data analysis to lead to the best mining decisions.
-      BrainPlus is the Core brain computing these calculations and criteria.
+      DeepDataAnalysisPlus is the Core brain computing these calculations and criteria.
       Not only this does analyze prices, but aglos/coins performances or orphans rate as well.
 
    GUI
@@ -114,7 +114,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
    
         Ability to pause miners while keeping other jobs running (pause button)
         This will stop mining activity
-        BrainPlus will still run in the background avoiding the learning phase on resume
+        DeepDataAnalysisPlus will still run in the background avoiding the learning phase on resume
         EarningTracker will still run in the background avoiding the learning phase on resume
 
    prerun
@@ -154,7 +154,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
           - NiceHash as a 4% fee - Set PricePenaltyFactor to 0.96 (1-0.04)
           - You feel like a pool is exaggerating his estimations by 10% - Set PricePenaltyFactor to 0.9
 
-   BrainPlus - ahashpoolplus / zergpoolplus / zpoolplus / blockmastersplus / miningdutchplus / nlpoolplus / prohashingplus
+   DeepDataAnalysisPlus - ahashpoolplus / zergpoolplus / zpoolplus / blockmastersplus / miningdutchplus / nlpoolplus / prohashingplus
 
       Uses calculations based on 24hractual and currentestimate ahashpool prices to get more realistic estimate.
       Includes some trust index based on past 1hr currentestimate variation from 24hr.
@@ -183,7 +183,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
       The first donation sequence occurs 1 hour after miners are started.
       If Interval is set higher than the donation time, the interval will prime.
       Example for default parameters:
-      Miners started at 10, First donation cycle runs at 11 untill 11:08, Next donation cycle occurs 12 hours after.
+      Miners started at 10, First donation cycle runs at 11 until 11:08, Next donation cycle occurs 12 hours after.
       All donation time and addresses are recorded in the logs folder.
 
    Miners Monitoring

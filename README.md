@@ -5,6 +5,7 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 </p>
 
  # SkullsMinerLite   - NVIDIA | AMD | CPU
+[![Version tag](https://img.shields.io/github/release/skullsminer/SkullsMinerLite.svg?)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
 [![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg)](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg) 
 [![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE)
@@ -58,6 +59,10 @@ Easy configuration, easy start in two steps:
 
       1. Enter your BTC address and hit Save Config
       2. Hit "Start"
+      
+<p align="center">
+<img src="https://skullsminer.net/images/configpage.png">	
+</p>
 
 *****
 If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.

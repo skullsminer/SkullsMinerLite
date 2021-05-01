@@ -1,29 +1,14 @@
-if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
+if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
  
 $Path = ".\Bin\NVIDIA-AMD-lolMiner\lolMiner.exe"
 $Uri = "https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.26/lolMiner_v1.26_Win64.zip"
 
 $Commands = [PSCustomObject]@{
-    "BeamHash3"  = "" 		#BeamHash III
-    "Cuckaroo29b"= "" 		#Cuckaroo29b
-    "Cuckaroo29i" = "" 		#Cuckaroo29i
-    "Cuckaroo29s" = "" 		#Cuckaroo29s
-    "Cuckaroo30" = "" 		#Cuckaroo30
-    "Cuckatoo31"= "--coin GRIN-C31" 		#Cuckatoo31
-    "Cuckatoo32"= "--coin GRIN-C32" 		#Cuckatoo32
-    "Cuckarood29" = "" 		#Cuckarood29
-    "Cuckaroom29" = "" 		#Cuckaroom29
-    "CuckooCycle" = "" 		#CuckooCycle/AEternity
-    "Equihash21x9" = "" 	#Equihash 210,9
-    "Equihash24x5" = "--coin AUTO144_5" 	#Equihash 144,5
-    "Equihash24x7" = "--coin AUTO192_7" 	#Equihash 192,7
-    "EquihashR25x4" = ""  	#Equihash 125,4,0
-    "EquihashR25x5" = "" 	#Equihash 150,5
-    "EquihashR25x5x3" = "" 	#Equihash 150,5,3
-    "EtcHash" = "" 			#Etchash
-    "Ethash" = "" 			#Ethash
-    "Ethashlowmemory" = ""  #Ethashlowmemory
-
+    # "equihash96" = " --coin MNX" #Equihash 96,5
+    #"Equihash21x9" = "--coin AION" #Equihash 210,9
+    # "equihash144" = " --coin AUTO144_5" #Equihash 144,5
+    # "GrinCuckatoo32" = " --coin GRIN-C32" #Equihash 144,5
+    # "beam" = " --coin BEAM" #Equihash 150,5
     }
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
 $WinningCustomConfig = [PSCustomObject]@{}
@@ -68,3 +53,5 @@ $Commands | Get-Member -MemberType NoteProperty | Select-Object -ExpandProperty 
         }
     }
 }
+
+

@@ -58,7 +58,7 @@ param(
 )
 
 
-. .\Includes\include.ps1
+. .\Includes\Include.ps1
 . .\Includes\Core.ps1
 
 @"
@@ -245,13 +245,13 @@ Function Global:TimerUITick
                         @{Name = "Worker"; Expression = {$_.worker}},
                         @{Name = "Status"; Expression = {$_.status}},
                         @{Name = "Last Seen"; Expression = {$_.timesincelastreport}},
-                        @{Name = "Version"; Expression = {$_.version}},
+                        @{Name = "Speed"; Expression = {if ($_.data.currentspeed) {($_.data.currentspeed | ConvertTo-Hash) -join ','} else {""}}},
+                        @{Name = "Benchmark Speed"; Expression = {if ($_.data.estimatedspeed) {($_.data.estimatedspeed | ConvertTo-Hash) -join ','} else {""}}},
                         @{Name = "Est. BTC/Day"; Expression = {[decimal]$_.profit}},
                         @{Name = "Miner"; Expression = {$_.data.name -join ','}},
                         @{Name = "Pool"; Expression = {$_.data.pool -join ','}},
                         @{Name = "Algo"; Expression = {$_.data.algorithm -join ','}},
-                        @{Name = "Speed"; Expression = {if ($_.data.currentspeed) {($_.data.currentspeed | ConvertTo-Hash) -join ','} else {""}}},
-                        @{Name = "Benchmark Speed"; Expression = {if ($_.data.estimatedspeed) {($_.data.estimatedspeed | ConvertTo-Hash) -join ','} else {""}}}
+                        @{Name = "Version"; Expression = {$_.version}}
                     ) | Sort "Worker Name")
                 $WorkersDGV.DataSource = [System.Collections.ArrayList]@($DisplayWorkers)
 
@@ -338,7 +338,7 @@ Function Global:TimerUITick
                 $LabelEarningsDetails.Lines = @()
             }
         
-            if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+            if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
             if (!(IsLoaded(".\Includes\Core.ps1"))) {. .\Includes\Core.ps1;RegisterLoaded(".\Includes\Core.ps1")}
         
             $Variables.CurrentProduct = (Get-Content .\Version.json | ConvertFrom-Json).Product
@@ -616,7 +616,7 @@ $MainForm.add_Shown({
         }
     })
     # Detects GPU count if 0 or Null in config
-    # Added DetectedGPU in 7.8.0 to store GPU details in Config
+    # Added DetectedGPU to store GPU details in Config
     If ($Config.DetectedGPU.Count -eq 0 -or $Config.GPUCount -eq $null -or $Config.GPUCount -lt 1){
         If ($Config -eq $null){$Config = [hashtable]::Synchronized(@{})}
         $DetectedGPU = @(DetectGPUCount)
@@ -1511,13 +1511,33 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBMPHAPIKey.location                 = New-Object System.Drawing.Point(122,224)
     $TBMPHAPIKey.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBMPHAPIKey
+	
+	$LabelMPHAPIID                          = New-Object system.Windows.Forms.Label
+    $LabelMPHAPIID.text                     = "MPH API ID"
+    $LabelMPHAPIID.AutoSize                 = $false
+    $LabelMPHAPIID.width                    = 120
+    $LabelMPHAPIID.height                   = 20
+    $LabelMPHAPIID.location                 = New-Object System.Drawing.Point(2,246)
+    $LabelMPHAPIID.Font                     = 'Microsoft Sans Serif,10'
+    $ConfigPageControls += $LabelMPHAPIID
+
+    $TBMPHAPIID                          = New-Object system.Windows.Forms.TextBox
+    $TBMPHAPIID.Tag                      = "API_ID"
+    $TBMPHAPIID.MultiLine                = $False
+    $TBMPHAPIID.text                     = $Config.API_ID
+    $TBMPHAPIID.AutoSize                 = $false
+    $TBMPHAPIID.width                    = 300
+    $TBMPHAPIID.height                   = 20
+    $TBMPHAPIID.location                 = New-Object System.Drawing.Point(122,246)
+    $TBMPHAPIID.Font                     = 'Microsoft Sans Serif,10'
+    $ConfigPageControls += $TBMPHAPIID
 
     $LabelMinersTypes                          = New-Object system.Windows.Forms.Label
     $LabelMinersTypes.text                     = "Miners Types"
     $LabelMinersTypes.AutoSize                 = $false
     $LabelMinersTypes.width                    = 120
     $LabelMinersTypes.height                   = 20
-    $LabelMinersTypes.location                 = New-Object System.Drawing.Point(2,246)
+    $LabelMinersTypes.location                 = New-Object System.Drawing.Point(2,268)
     $LabelMinersTypes.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelMinersTypes
 
@@ -1527,7 +1547,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeCPU.AutoSize              = $false
     $CheckBoxMinerTypeCPU.width                 = 60
     $CheckBoxMinerTypeCPU.height                = 20
-    $CheckBoxMinerTypeCPU.location              = New-Object System.Drawing.Point(124,246)
+    $CheckBoxMinerTypeCPU.location              = New-Object System.Drawing.Point(124,268)
     $CheckBoxMinerTypeCPU.Font                  = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeCPU.Checked               = ($CheckBoxMinerTypeCPU.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeCPU
@@ -1554,7 +1574,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeNVIDIA.AutoSize              = $false
     $CheckBoxMinerTypeNVIDIA.width                 = 70
     $CheckBoxMinerTypeNVIDIA.height                = 20
-    $CheckBoxMinerTypeNVIDIA.location              = New-Object System.Drawing.Point(186,246)
+    $CheckBoxMinerTypeNVIDIA.location              = New-Object System.Drawing.Point(186,268)
     $CheckBoxMinerTypeNVIDIA.Font                  = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeNVIDIA.Checked               = ($CheckBoxMinerTypeNVIDIA.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeNVIDIA
@@ -1580,7 +1600,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeAMD.AutoSize = $false
     $CheckBoxMinerTypeAMD.width = 60
     $CheckBoxMinerTypeAMD.height = 20
-    $CheckBoxMinerTypeAMD.location = New-Object System.Drawing.Point(261, 246)
+    $CheckBoxMinerTypeAMD.location = New-Object System.Drawing.Point(261, 268)
     $CheckBoxMinerTypeAMD.Font = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeAMD.Checked = ($CheckBoxMinerTypeAMD.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeAMD
@@ -1744,11 +1764,11 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $ConfigPageControls += $CheckBoxPenalizeSoloInPlus
 
     $CheckBoxPenalizeSoloInPlus.Add_Click( {
-                Get-ChildItem -Recurse ".\BrainPlus\" | ? {$_.Name -eq "BrainConfig.json"} | foreach {
-                    $BrainPlusConf = Get-Content $_.FullName | ConvertFrom-Json
-                    $BrainPlusConf | Add-Member -Force @{SoloBlocksPenalty = $CheckBoxPenalizeSoloInPlus.Checked}
-                    $BrainPlusConf | ConvertTo-Json | Out-File $_.FullName
-                    rv BrainPlusConf
+                Get-ChildItem -Recurse ".\DeepDataAnalysisPlus\" | ? {$_.Name -eq "DeepDataAnalysisConfig.json"} | foreach {
+                    $DeepDataAnalysisPlusConf = Get-Content $_.FullName | ConvertFrom-Json
+                    $DeepDataAnalysisPlusConf | Add-Member -Force @{SoloBlocksPenalty = $CheckBoxPenalizeSoloInPlus.Checked}
+                    $DeepDataAnalysisPlusConf | ConvertTo-Json | Out-File $_.FullName
+                    rv DeepDataAnalysisPlusConf
                 }
     })
 
@@ -1764,11 +1784,11 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $ConfigPageControls += $CheckBoxOrphanBlocksPenalty
 
     $CheckBoxOrphanBlocksPenalty.Add_Click( {
-                Get-ChildItem -Recurse ".\BrainPlus\" | ? {$_.Name -eq "BrainConfig.json"} | foreach {
-                    $BrainPlusConf = Get-Content $_.FullName | ConvertFrom-Json
-                    $BrainPlusConf | Add-Member -Force @{OrphanBlocksPenalty = $CheckBoxOrphanBlocksPenalty.Checked}
-                    $BrainPlusConf | ConvertTo-Json | Out-File $_.FullName
-                    rv BrainPlusConf
+                Get-ChildItem -Recurse ".\DeepDataAnalysisPlus\" | ? {$_.Name -eq "DeepDataAnalysisConfig.json"} | foreach {
+                    $DeepDataAnalysisPlusConf = Get-Content $_.FullName | ConvertFrom-Json
+                    $DeepDataAnalysisPlusConf | Add-Member -Force @{OrphanBlocksPenalty = $CheckBoxOrphanBlocksPenalty.Checked}
+                    $DeepDataAnalysisPlusConf | ConvertTo-Json | Out-File $_.FullName
+                    rv DeepDataAnalysisPlusConf
                 }
     })
 
@@ -2011,11 +2031,11 @@ $ButtonPause.Add_Click( {
             Update-Status("Stopping miners")
             $Variables.Paused = $True
 
-            # Stop and start mining to immediately switch to paused state without waiting for current NPMCycle to finish
+            # Stop and start mining to immediately switch to paused state without waiting for current SKMLCycle to finish
             $Variables.RestartCycle = $True
 
             $ButtonPause.Text = "Mine"
-            Update-Status("Mining paused. BrainPlus and Earning tracker running.")
+            Update-Status("Mining paused. DeepDataAnalysisPlus and Earning tracker running.")
             $LabelBTCD.Text = "Mining Paused | $($Branding.ProductLable) $($Variables.CurrentVersion)"
             
             If ($Variables.DonationRunning) {
@@ -2097,7 +2117,7 @@ $ButtonStart.Add_Click( {
         }
         else {
             if (!(IsLoaded(".\Includes\Core.ps1"))) {. .\Includes\Core.ps1; RegisterLoaded(".\Includes\Core.ps1")}
-            if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+            if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
             PrepareWriteConfig
             $ButtonStart.Text = "Stop"
             InitApplication

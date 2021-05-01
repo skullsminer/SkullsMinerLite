@@ -1,11 +1,11 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Alexis78\ccminer.exe"
 $Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/ccminerAlexis78/ccminerAlexis78v1.5.7z"
 
 $Commands = [PSCustomObject]@{
-    "keccak" = " -N 1 -m 2 -i 29 -d $($Config.SelGPUCC)" #Keccak
-    "keccakc" = " -N 1 -i 29 -d $($Config.SelGPUCC)" #Keccakc
+    #"keccak" = " -N 1 -m 2 -i 29 -d $($Config.SelGPUCC)" #Keccak
+    #"keccakc" = " -N 1 -i 29 -d $($Config.SelGPUCC)" #Keccakc
     "poly" = " -a poly -N 1 -d $($Config.SelGPUCC)" #polytimos
     "skein2" = " -i 29 -N 1 -d $($Config.SelGPUCC)" #Skein
     "x11evo" = " -N 1 -i 21 -d $($Config.SelGPUCC) " #X11evo

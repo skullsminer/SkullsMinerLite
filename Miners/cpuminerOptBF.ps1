@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\CPU-cpuminerOptBF\cpuminer-aes-sse42.exe"
 $Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/cpuminerOptBF/cpuminer-opt-v3.8.11-bf-win64.zip"

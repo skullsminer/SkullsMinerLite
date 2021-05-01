@@ -1,6 +1,6 @@
 cd (get-item $PSScriptRoot).parent.FullName
 
-. .\includes\include.ps1
+. .\includes\Include.ps1
 . .\includes\Server.ps1
 
 $Config = Load-Config ".\Config\Config.json"

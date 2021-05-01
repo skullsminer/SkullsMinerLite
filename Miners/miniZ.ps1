@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-miniZ\miniZ.exe"
 $Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/miniZ/miniZ_v1.7x3_win-x64.zip"

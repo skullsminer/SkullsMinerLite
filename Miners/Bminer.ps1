@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-Bminer\bminer.exe"
 $Uri = "https://www.bminercontent.com/releases/bminer-lite-v16.4.6-d77cc9b-amd64.zip"

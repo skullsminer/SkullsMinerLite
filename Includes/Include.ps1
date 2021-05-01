@@ -105,9 +105,9 @@ namespace PInvoke.Win32 {
 '@
             # Start-Transcript ".\logs\IdleTracking.log" -Append -Force
             $ProgressPreference = "SilentlyContinue"
-            . .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")
+            . .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")
             While ($True) {
-                if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+                if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
                 if (!(IsLoaded(".\Includes\Core.ps1"))) {. .\Includes\Core.ps1; RegisterLoaded(".\Includes\Core.ps1")}
                 $IdleSeconds = [math]::Round(([PInvoke.Win32.UserInput]::IdleTime).TotalSeconds)
 
@@ -222,7 +222,7 @@ Function Update-Monitoring {
 }
 
 Function Start-Mining {
-    # Starts the runspace that runs NPMCycle
+    # Starts the runspace that runs SKMLCycle
     $Global:CycleRunspace = [runspacefactory]::CreateRunspace()
     $CycleRunspace.Open()
     $CycleRunspace.SessionStateProxy.SetVariable('Config', $Config)
@@ -239,10 +239,10 @@ Function Start-Mining {
                 ls ".\logs\CoreCyle-*.log" | Where {$_.name -notin (ls ".\logs\CoreCyle-*.log" | sort LastWriteTime -Descending | select -First 10).FullName} | Remove-Item -Force -Recurse
             }
             $ProgressPreference = "SilentlyContinue"
-            . .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")
+            . .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")
             Update-Monitoring
             While ($True) {
-                if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+                if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
                 if (!(IsLoaded(".\Includes\Core.ps1"))) {. .\Includes\Core.ps1; RegisterLoaded(".\Includes\Core.ps1")}
                 $Variables.Paused | out-host
                 If ($Variables.Paused) {
@@ -268,7 +268,7 @@ Function Start-Mining {
                     }
                 }
                 else {
-                    NPMCycle
+                    SKMLCycle
                     Update-Monitoring
                     Sleep $Variables.TimeToSleep
                 }
@@ -282,7 +282,7 @@ Function Start-Mining {
 }
 
 Function Stop-Mining {
-    # Kills any active miners and stops the runspace that hosts NPMCycle
+    # Kills any active miners and stops the runspace that hosts SKMLCycle
     If ($Variables.ActiveMinerPrograms) {
         $Variables.ActiveMinerPrograms | ForEach {
             [Array]$filtered = ($BestMiners_Combo | Where Path -EQ $_.Path | Where Arguments -EQ $_.Arguments)
@@ -1291,7 +1291,6 @@ Function Autoupdate {
     try {
         $AutoUpdateVersion = Invoke-WebRequest "https://skullsminer.net/update.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
     }
-	
     catch {$AutoUpdateVersion = Get-content ".\Config\AutoUpdateVersion.json" | Convertfrom-json}
     If ($AutoUpdateVersion -ne $null) {$AutoUpdateVersion | ConvertTo-json | Out-File ".\Config\AutoUpdateVersion.json"}
     If ($AutoUpdateVersion.Product -eq $Variables.CurrentProduct -and [Version]$AutoUpdateVersion.Version -gt $Variables.CurrentVersion -and $AutoUpdateVersion.AutoUpdate) {
@@ -1306,8 +1305,8 @@ Function Autoupdate {
             If ($Variables.Started) {$Config.autostart = $true}
             Write-Config -ConfigFile $ConfigFile -Config $Config
             
-             #Download CRC File from a different location
-             #Abort if failed
+            # Download CRC File from a different location
+            # Abort if failed
             Update-Status("Retrieving update CRC")
             try {
                 $UpdateCRC = Invoke-WebRequest "https://skullsminer.net/crc.json" -TimeoutSec 15 -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
@@ -1641,7 +1640,7 @@ Function Load-CoinsIconsCache {
         $IconCacheRunspace.SessionStateProxy.SetVariable("Variables", $Variables)
         $IconCacheRunspace.SessionStateProxy.Path.SetLocation($pwd) | Out-Null
         $IconCacheLoader = [PowerShell]::Create().AddScript({
-            . .\Includes\include.ps1
+            . .\Includes\Include.ps1
             $Variables.CoinsIconCachePopulating = $True
 
             If (!$Variables.CoinsIconCacheLoaded) {

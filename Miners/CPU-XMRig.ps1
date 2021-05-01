@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\CPU-XMRig\xmrig.exe"
 $Uri = "https://github.com/xmrig/xmrig/releases/download/v6.12.0/xmrig-6.12.0-msvc-win64.zip"

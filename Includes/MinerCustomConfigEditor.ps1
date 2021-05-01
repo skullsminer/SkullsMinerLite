@@ -71,11 +71,7 @@ $OnLoadForm_StateCorrection=
 {
     $ButtonLoadRules.PerformClick()
 } 
- 
-$HelpLabel_OpenLink= 
-{ 
-    [system.Diagnostics.Process]::start($HelpLabel.Tag) 
-} 
+
 #---------------------------------------------- 
 #region Generated Form Code 
 $form1.Text = "SkullsMinerLite Custom Miners Configuration Editor" 
@@ -102,26 +98,6 @@ $PanelEditControls = @()
     # $pictureBoxLogo.SizeMode = 1
     # $pictureBoxLogo.ImageLocation = $Branding.LogoPath
     # $form1Controls += $pictureBoxLogo
- 
- 
-    #$HelpLabel.Font = New-Object System.Drawing.Font("Microsoft Sans Serif",9,0,3,0) 
-    #$System_Drawing_Size = New-Object System.Drawing.Size 
-    #$System_Drawing_Size.Width = 100 
-    #$System_Drawing_Size.Height = 20 
-    #$HelpLabel.Size = $System_Drawing_Size 
-    #$HelpLabel.TabIndex = 10 
-    #$HelpLabel.Text = "Need help?" 
-    #$HelpLabel.Tag = "https://discord.gg/" 
-    #$System_Drawing_Point = New-Object System.Drawing.Point 
-    #$System_Drawing_Point.X = 0 
-    #$System_Drawing_Point.Y = 0 
-    #$HelpLabel.Location = $System_Drawing_Point 
-    #$HelpLabel.TabStop = $True 
-    #$HelpLabel.DataBindings.DefaultDataSourceUpdateMode = 0 
-    #$HelpLabel.Name = "HelpLabel" 
-    #$HelpLabel.add_click($HelpLabel_OpenLink) 
- 
-#$form1Controls += $HelpLabel
 
     $LabelAlgorithm                          = New-Object system.Windows.Forms.Label
     $LabelAlgorithm.text                     = "Algorithm"

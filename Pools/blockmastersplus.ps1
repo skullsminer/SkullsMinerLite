@@ -1,9 +1,9 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 Try {
     $dtAlgos = New-Object System.Data.DataTable
-    if (Test-Path ((split-path -parent (get-item $script:MyInvocation.MyCommand.Path).Directory) + "\BrainPlus\blockmastersplus\blockmastersplus.xml")) {
-        $dtAlgos.ReadXml((split-path -parent (get-item $script:MyInvocation.MyCommand.Path).Directory) + "\BrainPlus\blockmastersplus\blockmastersplus.xml") | out-null
+    if (Test-Path ((split-path -parent (get-item $script:MyInvocation.MyCommand.Path).Directory) + "\DeepDataAnalysisPlus\blockmastersplus\blockmastersplus.xml")) {
+        $dtAlgos.ReadXml((split-path -parent (get-item $script:MyInvocation.MyCommand.Path).Directory) + "\DeepDataAnalysisPlus\blockmastersplus\blockmastersplus.xml") | out-null
     }
 }
 catch { return }

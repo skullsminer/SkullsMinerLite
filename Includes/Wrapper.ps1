@@ -19,7 +19,7 @@ $culture.NumberFormat.NumberGroupSeparator = ","
 
 Set-Location (Split-Path $script:MyInvocation.MyCommand.Path)
 
-. ..\Includes\include.ps1
+. ..\Includes\Include.ps1
 
 0 | Set-Content "..\Logs\energi.txt"
 

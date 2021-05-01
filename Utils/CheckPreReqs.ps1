@@ -1,6 +1,6 @@
 
-. .\includes\include.ps1
-. .\includes\server.ps1
+. .\Includes\Include.ps1
+. .\Includes\server.ps1
 
 Write-Host "System Version: $([System.Environment]::OSVersion.Version)"
 Write-Host "Powershell version: $($PSVersionTable.PSVersion)"

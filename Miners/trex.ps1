@@ -1,14 +1,22 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-trex\t-rex.exe"
 $Uri = "https://github.com/trexminer/T-Rex/releases/download/0.20.3/t-rex-0.20.3-win.zip"
 
 $Commands = [PSCustomObject]@{
-    # "kawpow"     = "" #kawpow 
-    "mtp"        = "" #MTP
-    "ethash"       = "" #etchash
-    "etchash"       = "" #etchash
-    "octopus"       = "" #octopus
+    #"etchash" = "" 					#Etchash (new with 0.18.8)
+    "ethash" = ""					#Ethash (new with v0.17.2, broken in v0.18.3, fixed with v0.18.5)
+    #"ethashlowmemory" = ""			#Ethash for low memory coins
+    "kawpow" = ""					#KawPOW (new with v0.15.2)
+    "mtp" = ""						#MTP
+    "mtp-tcr" = ""					#MTP-TCR (new with v0.15.2)
+    "octopus" = ""					#Octopus  (new with v0.19.0)
+    "progpow-veil" = ""				#ProgPowVeil (new with v0.18.1)
+    "progpow-veriblock" = ""		#vProgPow (new with v0.18.1)
+    "progpowsero" = "--coin sero"	#ProgPow  (new with v0.15.2)
+    "progpowz" = "" 				#ProgpowZ (new with v0.17.2)
+    "tensority" = ""				#Tensority
+	
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

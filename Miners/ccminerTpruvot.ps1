@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Tpruvot\ccminer-x64.exe"
 $Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/ccminerTpruvot/ccminer-2.3.1-cuda10.7z"
@@ -47,8 +47,8 @@ $Commands = [PSCustomObject]@{
     #"yescrypt" = "" #Yescrypt
     "sha256q"       = " -d $($Config.SelGPUCC)" #Sha256q
     #"lyra2v3"       = " -d $($Config.SelGPUCC)" #Lyra2v3
-    "blake2b"       = ",d=12 -d $($Config.SelGPUCC)" #blake2b
-    "scryptn11" = " --cpu-priority 1 -a scrypt:10" #scryptn11
+    #"blake2b"       = ",d=12 -d $($Config.SelGPUCC)" #blake2b
+    #"scryptn11" = " --cpu-priority 1 -a scrypt:10" #scryptn11
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

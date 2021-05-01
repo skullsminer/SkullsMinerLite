@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\AMD-WildRigMulti\wildrig.exe"
 $Uri = "https://github.com/andru-kun/wildrig-multi/releases/download/0.28.3/wildrig-multi-windows-0.28.3.7z"
@@ -26,7 +26,7 @@ $Commands = [PSCustomObject]@{
     "polytimos"     = " --algo polytimos"
     "renesis"       = " --algo renesis" #renesis
     "sha256q"       = " --algo sha256q"
-    "sha256t"       = " --algo sha256t"
+    #"sha256t"       = " --algo sha256t"
     "skein2"        = " --algo skein2" #Skein2
     "skunkhash"     = " --algo skunkhash" #Skunk
     "sonoa"         = " --algo sonoa" #sonoa

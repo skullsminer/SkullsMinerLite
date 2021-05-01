@@ -68,7 +68,7 @@ function Reset-ServerRules {
 }
 
 Function Start-Server {
-    if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+    if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
     Initialize-ServerRules $Config.Server_Port
 
     # Setup runspace to launch the API webserver in a separate thread
@@ -79,7 +79,7 @@ Function Start-Server {
     $ServerRunspace.SessionStateProxy.Path.SetLocation($pwd) | Out-Null
     
     $Server = [PowerShell]::Create().AddScript({
-        . .\Includes\include.ps1
+        . .\Includes\Include.ps1
         
         Load-CoinsIconsCache
         
@@ -147,7 +147,7 @@ Function Start-Server {
         Foreach ($P in $Up) {$Hso.Prefixes.Add($P)} 
             $ServerListener.Start()
             While ($ServerListener.IsListening -and -not $Variables.StopServer) {
-                if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+                if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
                 # $HC = $ServerListener.GetContext()
                 
                 $contextTask = $ServerListener.GetContextAsync()
@@ -188,8 +188,7 @@ Function Start-Server {
                         <header>
                         <img src=$($Branding.LogoPath)>
                         Copyright (c) 2021-$((Get-Date).year) Skulldeath
-						Credit: NemosMiner&NPlusMiner
-                        <br>
+						<br>
                         
                         $(Get-Date) &nbsp&nbsp&nbsp <a href="https://github.com/skullsminer/SkullsMinerLite">$($Branding.ProductLable) $($Variables.CurrentVersion)</a>  &nbsp&nbsp&nbsp Runtime $(("{0:dd\ \d\a\y\s\ hh\:mm}" -f ((get-date)-$Variables.ScriptStartDate))) &nbsp&nbsp&nbsp Path: $($BasePath) &nbsp&nbsp&nbsp API Cache hit ratio: $("{0:N0}" -f $CacheHitsRatio)%<br>
                         Worker Name: <a href="./Status">$($Config.WorkerName)</a> 
@@ -205,6 +204,7 @@ Function Start-Server {
                     } Else {
                         $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/dusk/64/000000/circled-pause.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Pause"">Pause Mining</a>"
                     }
+					$Header +=
 
                     If (Test-Path ".\Config\Peers.json") {
                         $Header += " Rigs:&nbsp&nbsp&nbsp&nbsp&nbsp"
@@ -222,6 +222,7 @@ Function Start-Server {
                         <Footer>
                         Copyright (c) 2021 SkullsMinerLite
                         <span class="right">
+						Credit: NemosMiner&NPlusMiner
                         <a href="www.flaticon.com">flaticon.com</a>
                         </span><br>
                         </Footer>

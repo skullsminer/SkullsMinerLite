@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-NBMiner\nbminer.exe"
 $Uri = "https://github.com/NebuTech/NBMiner/releases/download/v37.2/NBMiner_37.2_Win.zip"
@@ -7,6 +7,8 @@ $Commands = [PSCustomObject]@{
     # "handshake"       = "-a hns" #handshake
     "kawpow"            = "-a kawpow" #kawpow
     "grincuckatoo32"    = "-a grin32" #Grincuckatoo32
+	#"grincuckatoo31"    = "-a grin31" #Grincuckatoo31
+	"Aeternity"    = "-a aeternity" #Aeternity
     "beamv3"            = "-a beamv3" #Beamv3
     "octopus"            = "-a octopus" #octopus
     "etchash"            = "-a etchash" #etchash

@@ -76,7 +76,7 @@ $scriptpath = Split-Path -parent $MyInvocation.MyCommand.Definition
 #>
 
 $StartColor     = If ($Config.ChartGradientMinColor) {$Config.ChartGradientMinColor} else {"0e85c9"}
-$MidColor       = If ($Config.ChartGradientMidColor) {$Config.ChartGradientMidColor} else {"17bde0"} #795f09
+$MidColor       = If ($Config.ChartGradientMidColor) {$Config.ChartGradientMidColor} else {"17bde0"}
 $EndColor       = If ($Config.ChartGradientMaxColor) {$Config.ChartGradientMaxColor} else {"50bd86"}
 
 Switch ($Chart) {

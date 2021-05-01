@@ -10,7 +10,7 @@ Function InitApplication {
     $ServerClientCreds = New-Object System.Management.Automation.PSCredential ($Config.Server_ClientUser, $ServerClientPasswd)
     $Variables.ServerClientCreds = $ServerClientCreds
 
-    if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1")}
+    if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
     if (!(IsLoaded(".\Includes\Server.ps1"))) {. .\Includes\Server.ps1;RegisterLoaded(".\Includes\Server.ps1")}
     Set-Location (Split-Path $script:MyInvocation.MyCommand.Path)
 
@@ -121,10 +121,10 @@ Function Start-ChildJobs {
         
         # Starts Brains if necessary
         $Config.PoolName | foreach { if ($_ -notin $Variables.BrainJobs.PoolName){
-            $BrainPath = "$($Variables.MainPath)\BrainPlus\$($_)"
-            $BrainName = (".\BrainPlus\"+$_+"\BrainPlus.ps1")
+            $BrainPath = "$($Variables.MainPath)\DeepDataAnalysisPlus\$($_)"
+            $BrainName = (".\DeepDataAnalysisPlus\"+$_+"\DeepDataAnalysisPlus.ps1")
             if (Test-Path $BrainName){
-                $Variables.StatusText = "Starting BrainPlus for $($_)"
+                $Variables.StatusText = "Starting DeepDataAnalysisPlus for $($_)"
                 $BrainJob = Start-Job -FilePath $BrainName -ArgumentList @($BrainPath)
                 $BrainJob | Add-Member -Force @{PoolName = $_}
                 $Variables.BrainJobs += $BrainJob
@@ -155,11 +155,11 @@ Function Start-ChildJobs {
         }
 }
 
-Function NPMCycle {
+Function SKMLCycle {
 # $CycleTime = Measure-Command -Expression {
 $CycleScriptBlock =  {
     [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
-    if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1;RegisterLoaded(".\Includes\include.ps1");"LoadedInclude" | out-host}
+    if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1");"LoadedInclude" | out-host}
     
     (Get-Date).ToString() | out-host
     
@@ -221,7 +221,7 @@ $CycleScriptBlock =  {
         if((Get-Date).AddHours(-12) -ge $Variables.LastDonated -and $Variables.DonateRandom.wallet -eq $Null){
             # Get donation addresses randomly from agreed developers list
             # This will fairly distribute donations to Developers
-            # Developers list and wallets is publicly available at: https://skullsminer.net/skullsminerlite.json
+            # Developers list and wallets is publicly available at: https://skullsminer.net/skullsminerlite.json 
             $Variables.StatusText = "ENTERING DONATION"
             $Variables.DonationStart = $True 
             $Variables.DonationRunning = $False 

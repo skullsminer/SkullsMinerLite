@@ -1,4 +1,4 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\AMD-SgminerFancyIX\sgminer.exe"
 $Uri = "https://github.com/fancyIX/sgminer-phi2-branch/releases/download/5.6.1.3.b5ip3/sgminer-phi2-fancyIX-win64-beta5ip3.zip"

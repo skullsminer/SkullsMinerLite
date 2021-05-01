@@ -116,7 +116,7 @@ if (Test-Path "$($Path)\Algos.xml"){
 $pid | out-file ".\pid.txt"
 $RoundZero = ($dtAlgos.Rows.Count -lt 1)
 
-. ..\..\Includes\include.ps1
+. ..\..\Includes\Include.ps1
 $Config = Load-Config "..\..\Config\Config.json"
     If ($Config.Server_Client) {
         $ServerClientPasswd = ConvertTo-SecureString $Config.Server_ClientPassword -AsPlainText -Force
@@ -136,8 +136,8 @@ While ($true) {
     [System.Threading.Thread]::CurrentThread.CurrentCulture.DateTimeFormat = [System.Globalization.CultureInfo]::GetCultureInfo('en-US').DateTimeFormat
 
 #Get-Config{
-    If (Test-Path ".\BrainConfig.json") {
-        $BrainConfig = Get-Content ".\BrainConfig.json" | ConvertFrom-Json
+    If (Test-Path ".\DeepDataAnalysisConfig.json") {
+        $DeepDataAnalysisConfig = Get-Content ".\DeepDataAnalysisConfig.json" | ConvertFrom-Json
     } else {return}
 
 
@@ -145,11 +145,12 @@ $CurDate = Get-Date
 $RetryInterval = 0
 
 try{
-    $AlgoData = Invoke-ProxiedWebRequest $BrainConfig.PoolStatusUri -UseBasicParsing | ConvertFrom-Json
-    $CoinsData = Invoke-ProxiedWebRequest $BrainConfig.PoolCurrenciesUri -UseBasicParsing | ConvertFrom-Json 
-    If ($BrainConfig.SoloBlocksPenaltyMode -eq "Sample" -or $BrainConfig.OrphanBlocksPenalty) {
+    $API = .\APIWrapper.ps1
+    $AlgoData = $API.Status
+    $CoinsData = $API.Currencies
+    If ($DeepDataAnalysisConfig.SoloBlocksPenaltyMode -eq "Sample" -or $DeepDataAnalysisConfig.OrphanBlocksPenalty) {
         # Need to update in case of type change (Orphans)
-        (Invoke-ProxiedWebRequest $BrainConfig.PoolBlocksUri -UseBasicParsing | ConvertFrom-Json) | ? {$_.category -ne "new"} | foreach {
+        $API.Blocks | ? {$_.category -ne "new"} | foreach {
             if (!$_.symbol) {$_ | Add-Member -Force @{symbol = $_.Coin}}
             if (!$_.type) {$_ | Add-Member -Force @{type = "Shared"}}
             Try{
@@ -163,15 +164,15 @@ try{
         }
         $dtBlocks.PrimaryKey = @($dtBlocks.Columns["symbol"],$dtBlocks.Columns["time"],$dtBlocks.Columns["height"])
         $dtBlocks.TableName = "Blocks"
-        ($dtBlocks.Rows | sort date | group symbol | ? {$_.count -gt $BrainConfig.SoloBlocksPenaltyOnLastNBlocks} | foreach {$dtBlocks.Select("symbol = '$($_.Name)'") | sort time | select -first ($_.count - $BrainConfig.SoloBlocksPenaltyOnLastNBlocks)}).delete()
+        ($dtBlocks.Rows | sort date | group symbol | ? {$_.count -gt $DeepDataAnalysisConfig.SoloBlocksPenaltyOnLastNBlocks} | foreach {$dtBlocks.Select("symbol = '$($_.Name)'") | sort time | select -first ($_.count - $DeepDataAnalysisConfig.SoloBlocksPenaltyOnLastNBlocks)}).delete()
     }
     $APICallFails = 0
 } catch {
     $APICallFails++
-    $RetryInterval = $BrainConfig.Interval * [math]::max(0,$APICallFails - $BrainConfig.AllowedAPIFailureCount)
+    $RetryInterval = $DeepDataAnalysisConfig.Interval * [math]::max(0,$APICallFails - $DeepDataAnalysisConfig.AllowedAPIFailureCount)
 }
 
-If (!$RoundZero -and $dtAlgos.Select("date >= '$($CurDate.AddMinutes(-($BrainConfig.MinSampleTSMinutes)))'")) {
+If (!$RoundZero -and $dtAlgos.Select("date >= '$($CurDate.AddMinutes(-($DeepDataAnalysisConfig.MinSampleTSMinutes)))'")) {
     $MinSampleTSMinutesPassed = $True
 }
 
@@ -180,19 +181,19 @@ $LoopTime = (Measure-Command {
     Foreach ($Coin in ($CoinsData | gm -MemberType NoteProperty).Name) {
             # Some pools present some Coins with no correspoding Algo in Status API
             If (!($AlgoData.($CoinsData.$Coin.Algo))) { continue }
-            $CoinsData.($Coin).estimate = $CoinsData.($Coin).estimate / $BrainConfig.CoinEstimateDivisor
-            # $BasePrice = If ($AlgoData.($CoinsData.$Coin.Algo).actual_last24h) {[Decimal]$AlgoData.($CoinsData.$Coin.Algo).actual_last24h / $BrainConfig.Actual24hrDivisor} else {$CoinsData.($Coin).estimate -as [Decimal]}
+            $CoinsData.($Coin).estimate = $CoinsData.($Coin).estimate / $DeepDataAnalysisConfig.CoinEstimateDivisor
+            # $BasePrice = If ($AlgoData.($CoinsData.$Coin.Algo).actual_last24h) {[Decimal]$AlgoData.($CoinsData.$Coin.Algo).actual_last24h / $DeepDataAnalysisConfig.Actual24hrDivisor} else {$CoinsData.($Coin).estimate -as [Decimal]}
             
             #Dealt with ZergPool to get Per Coin Actual24hr and Estimate24hr in Currencies API
             #If not available, fall back to hybrid coin/algo level data
             $BasePrice = If ($CoinsData.($Coin).actual_last24h) {
-                [Decimal]$CoinsData.($Coin).actual_last24h / $BrainConfig.Actual24hrDivisor
+                [Decimal]$CoinsData.($Coin).actual_last24h / $DeepDataAnalysisConfig.Actual24hrDivisor
             } elseif ($CoinsData.($Coin).estimate_last24)  {
                 $CoinsData.($Coin).estimate -as [Decimal]
             } else {
-                [Decimal]$AlgoData.($CoinsData.$Coin.Algo).actual_last24h / $BrainConfig.Actual24hrDivisor
+                [Decimal]$AlgoData.($CoinsData.$Coin.Algo).actual_last24h / $DeepDataAnalysisConfig.Actual24hrDivisor
             }
-            $CoinsData.($Coin).estimate = [math]::max(0, [decimal]($CoinsData.($Coin).estimate * ( 1 - ($BrainConfig.PerAPIFailPercentPenalty * [math]::max(0,$APICallFails - $BrainConfig.AllowedAPIFailureCount) /100))))
+            $CoinsData.($Coin).estimate = [math]::max(0, [decimal]($CoinsData.($Coin).estimate * ( 1 - ($DeepDataAnalysisConfig.PerAPIFailPercentPenalty * [math]::max(0,$APICallFails - $DeepDataAnalysisConfig.AllowedAPIFailureCount) /100))))
             If (! $CoinsData.$_.Symbol) {
                 $CoinsData.($Coin) | Add-Member -Force @{symbol           = $Coin}
             }
@@ -228,9 +229,9 @@ $LoopTime = (Measure-Command {
                 # $CoinsData.($Coin) | Add-Member -Force @{ TS_blocks_solo      = $CoinBlocksType.($Coin).Party + $CoinBlocksType.($Coin).Solo }
                 # $CoinsData.($Coin) | Add-Member -Force @{ TS_blocks_shared    = $CoinBlocksType.($Coin).Shared }
                 # $CoinsData.($Coin) | Add-Member -Force @{ TS_blocks_orphan    = $CoinBlocksType.($Coin).Orphan }
-            # $TrendSpanSizets = New-TimeSpan -Minutes $BrainConfig.TrendSpanSizeMinutes
-            $SampleSizets = New-TimeSpan -Minutes $BrainConfig.SampleSizeMinutes
-            # $SampleSizeHalfts = New-TimeSpan -Minutes ($BrainConfig.SampleSizeMinutes/2)
+            # $TrendSpanSizets = New-TimeSpan -Minutes $DeepDataAnalysisConfig.TrendSpanSizeMinutes
+            $SampleSizets = New-TimeSpan -Minutes $DeepDataAnalysisConfig.SampleSizeMinutes
+            # $SampleSizeHalfts = New-TimeSpan -Minutes ($DeepDataAnalysisConfig.SampleSizeMinutes/2)
             
             # The date filter in the query below kills perfs (from 11 secs to 55 secs) !
             # have to investigate more effective way to filter.
@@ -279,7 +280,7 @@ $LoopTime = (Measure-Command {
             
             If ($dtAlgos.Select($Sample)) {
             $CoinsData.($Coin) | Add-Member -Force @{ Penalty1 =
-                # (($BrainConfig.Model1SampleHalfPower * ((($SampleHalf.Up - $SampleHalf.Down) / [math]::max(1,$SampleHalf.count)) * [math]::abs((Get-Median $SampleHalf.Last24Drift)))) + ((($Sample.Up - $Sample.Down) / [math]::max(1,$Sample.count)) * [math]::abs((Get-Median $Sample.Last24Drift))) / ($BrainConfig.Model1SampleHalfPower+1))
+                # (($DeepDataAnalysisConfig.Model1SampleHalfPower * ((($SampleHalf.Up - $SampleHalf.Down) / [math]::max(1,$SampleHalf.count)) * [math]::abs((Get-Median $SampleHalf.Last24Drift)))) + ((($Sample.Up - $Sample.Down) / [math]::max(1,$Sample.count)) * [math]::abs((Get-Median $Sample.Last24Drift))) / ($DeepDataAnalysisConfig.Model1SampleHalfPower+1))
                 ((($Up - $Down) / [math]::max(1,$dtAlgos.Select($Sample).Count)) * [math]::abs((Get-Median ($dtAlgos.Select($Sample).Last24Drift))))
             }
             }
@@ -298,14 +299,16 @@ $LoopTime = (Measure-Command {
             }
 
             $BlockSample = "symbol = '$($Coin)'"
-            $All = $dtBlocks.Select($BlockSample).count
-            $Orphan = $dtBlocks.Select($BlockSample + " and category = 'orphan'").count
-            $Shared = $dtBlocks.Select($BlockSample + " and type = 'shared'").count
-            $Solo = $dtBlocks.Select($BlockSample + " and type = 'solo'").count
-            $Party = $dtBlocks.Select($BlockSample + " and type like 'party*'").count
-
+            if ($dtBlocks.Count -gt 1) {
+                $All = $dtBlocks.Select($BlockSample).count
+                $Orphan = $dtBlocks.Select($BlockSample + " and category = 'orphan'").count
+                $Shared = $dtBlocks.Select($BlockSample + " and type = 'shared'").count
+                $Solo = $dtBlocks.Select($BlockSample + " and type = 'solo'").count
+                $Party = $dtBlocks.Select($BlockSample + " and type like 'party*'").count
+            }
+            
             $CoinsData.($Coin) | Add-Member -Force @{ SoloBlocksPenalty = 
-                Switch ($BrainConfig.SoloBlocksPenaltyMode) {
+                Switch ($DeepDataAnalysisConfig.SoloBlocksPenaltyMode) {
                     "Sample" {
                         # If ($CoinObject.'TS_blocks' -gt 0 -and $CoinObject.'TS_blocks_solo' -gt 0 -and $CoinObject.'hashrate' -gt 0 -and $CoinObject.'hashrate_solo' -gt 0 ) {
                         #Remove "-and $CoinObject.'hashrate_solo' -gt 0" as it means penalty would be 1 if no solo hashrate
@@ -343,7 +346,7 @@ $LoopTime = (Measure-Command {
             }
 
             $CoinsData.($Coin) | Add-Member -Force @{ Price1 = 
-                If ($BrainConfig.Penalty2onModel1 -and $CoinsData.($Coin).Penalty2) {
+                If ($DeepDataAnalysisConfig.Penalty2onModel1 -and $CoinsData.($Coin).Penalty2) {
                     (($CoinsData.($Coin).Penalty1 ) + $CoinsData.($Coin).actual_last24h) * $CoinsData.($Coin).Penalty2
                 } else {
                     (($CoinsData.($Coin).Penalty1) + $CoinsData.($Coin).actual_last24h)
@@ -351,12 +354,12 @@ $LoopTime = (Measure-Command {
             }
 
             $CoinsData.($Coin) | Add-Member -Force @{ Price2 = 
-                Switch ($BrainConfig.Model2RefPrice) {
+                Switch ($DeepDataAnalysisConfig.Model2RefPrice) {
                     "Average" {
-                        $CoinsData.($Coin).Penalty2 *(( (($BrainConfig.Model2SampleHalfPower * $CoinsData.($Coin).SampleHalfEstimateAverage )) + ( $CoinsData.($Coin).SampleEstimateAverage ))  / ($BrainConfig.Model2SampleHalfPower+1) )
+                        $CoinsData.($Coin).Penalty2 *(( (($DeepDataAnalysisConfig.Model2SampleHalfPower * $CoinsData.($Coin).SampleHalfEstimateAverage )) + ( $CoinsData.($Coin).SampleEstimateAverage ))  / ($DeepDataAnalysisConfig.Model2SampleHalfPower+1) )
                     }
                     "Median" {
-                        $CoinsData.($Coin).Penalty2 *(( (($BrainConfig.Model2SampleHalfPower * $CoinsData.($Coin).SampleHalfEstimateMedian )) + ( $CoinsData.($Coin).SampleEstimateMedian ))  / ($BrainConfig.Model2SampleHalfPower+1) )
+                        $CoinsData.($Coin).Penalty2 *(( (($DeepDataAnalysisConfig.Model2SampleHalfPower * $CoinsData.($Coin).SampleHalfEstimateMedian )) + ( $CoinsData.($Coin).SampleEstimateMedian ))  / ($DeepDataAnalysisConfig.Model2SampleHalfPower+1) )
                     }
                     "Current" {
                         $CoinsData.($Coin).Penalty2 * $CoinsData.($Coin).estimate_current
@@ -369,16 +372,16 @@ $LoopTime = (Measure-Command {
 
 
             $CoinsData.($Coin) | Add-Member -Force @{ Price = 
-                    [math]::max( 0, [decimal](($CoinsData.($Coin).Price1 * $BrainConfig.Model1Power + $CoinsData.($Coin).Price2 * $BrainConfig.Model2Power) / ($BrainConfig.Model1Power + $BrainConfig.Model2Power)) )
+                    [math]::max( 0, [decimal](($CoinsData.($Coin).Price1 * $DeepDataAnalysisConfig.Model1Power + $CoinsData.($Coin).Price2 * $DeepDataAnalysisConfig.Model2Power) / ($DeepDataAnalysisConfig.Model1Power + $DeepDataAnalysisConfig.Model2Power)) )
             }
 
-            If ($BrainConfig.SoloBlocksPenalty) {
+            If ($DeepDataAnalysisConfig.SoloBlocksPenalty) {
                 $CoinsData.($Coin) | Add-Member -Force @{ Price =
                     [math]::max( 0, [decimal]($CoinsData.($Coin).SoloBlocksPenalty * $CoinsData.($Coin).Price))
                 }
             }
 
-            If ($BrainConfig.OrphanBlocksPenalty) {
+            If ($DeepDataAnalysisConfig.OrphanBlocksPenalty) {
                 $CoinsData.($Coin) | Add-Member -Force @{ Price =
                     [math]::max( 0, [decimal]($CoinsData.($Coin).OrphanBlocksPenalty * $CoinsData.($Coin).Price))
                 }
@@ -402,7 +405,7 @@ $LoopTime = (Measure-Command {
 
     
             Foreach ($AlgoName in ($AlgoData | gm -MemberType NoteProperty).Name) {
-                $TopCoin = $dtAlgos.Select("algo = '$($AlgoName)' and NoAutotrade = 0 and SoloHashPercent < '$($BrainConfig.MaxSoloPercent/100)'") | ? { $_.date -eq $CurDate } | Sort Plus_Price -Descending | select -First 1
+                $TopCoin = $dtAlgos.Select("algo = '$($AlgoName)' and NoAutotrade = 0 and SoloHashPercent < '$($DeepDataAnalysisConfig.MaxSoloPercent/100)'") | ? { $_.date -eq $CurDate } | Sort Plus_Price -Descending | select -First 1
                 If ($TopCoin) {
                     $AlgoData.($AlgoName) | Add-Member -Force @{Plus_Price = $TopCoin.Plus_Price}
                     $AlgoData.($AlgoName)  | Add-Member -Force @{MC = $TopCoin.Symbol}
@@ -414,8 +417,8 @@ $LoopTime = (Measure-Command {
                     $AlgoData.($AlgoName)  | Add-Member -Force @{workers = $TopCoin.workers}
                     $AlgoData.($AlgoName)  | Add-Member -Force @{workers_shared = $TopCoin.workers_shared}
                     $AlgoData.($AlgoName)  | Add-Member -Force @{workers_solo = $TopCoin.workers_solo}
-                    $AlgoData.($AlgoName)  | Add-Member -Force @{actual_last24h_COIN = $TopCoin.actual_last24h * $BrainConfig.Actual24hrDivisor}
-                    $AlgoData.($AlgoName)  | Add-Member -Force @{estimate_last24_COIN = $TopCoin.estimate_last24h * $BrainConfig.Actual24hrDivisor}
+                    $AlgoData.($AlgoName)  | Add-Member -Force @{actual_last24h_COIN = $TopCoin.actual_last24h * $DeepDataAnalysisConfig.Actual24hrDivisor}
+                    $AlgoData.($AlgoName)  | Add-Member -Force @{estimate_last24_COIN = $TopCoin.estimate_last24h * $DeepDataAnalysisConfig.Actual24hrDivisor}
                     $AlgoData.($AlgoName)  | Add-Member -Force @{Date = $CurDate}
 
                     $AlgoData.($AlgoName)  | Add-Member -Force @{Penalty = $TopCoin.Penalty}
@@ -433,17 +436,17 @@ $LoopTime = (Measure-Command {
                 }
             }
     Try{
-        $dtAlgos.Select("date <= '$($CurDate.AddMinutes(-($BrainConfig.SampleSizeMinutes+2)))'").delete()
+        $dtAlgos.Select("date <= '$($CurDate.AddMinutes(-($DeepDataAnalysisConfig.SampleSizeMinutes+2)))'").delete()
     } catch {}
 
 
-if ($BrainConfig.EnableLog) {$MathObject | Export-Csv -NoTypeInformation -Append $BrainConfig.LogDataPath}
+if ($DeepDataAnalysisConfig.EnableLog) {$MathObject | Export-Csv -NoTypeInformation -Append $DeepDataAnalysisConfig.LogDataPath}
 # ($AlgoData | ConvertTo-Json).replace("NaN",0) | Set-Content ".\zergpoolplus.json"
 
 $dvAlgosResult = New-Object System.Data.DataView($dtAlgos)
 $dvAlgosResult.Sort = "[date]"
-$dvAlgosResult.Filter = "date > '$($CurDate.AddSeconds(-($BrainConfig.Interval*3)))' and date = MAX([date]) and NoAutotrade = 0 and SoloHashPercent < '$($BrainConfig.MaxSoloPercent/100)'"
-$dvAlgosResult.ToTable().WriteXml("$($Path)\$($BrainConfig.TransferFile)",[System.Data.XmlWriteMode]::WriteSchema)
+$dvAlgosResult.Filter = "date > '$($CurDate.AddSeconds(-($DeepDataAnalysisConfig.Interval*3)))' and date = MAX([date]) and NoAutotrade = 0 and SoloHashPercent < '$($DeepDataAnalysisConfig.MaxSoloPercent/100)'"
+$dvAlgosResult.ToTable().WriteXml("$($Path)\$($DeepDataAnalysisConfig.TransferFile)",[System.Data.XmlWriteMode]::WriteSchema)
 
 }).TotalSeconds
 
@@ -467,7 +470,7 @@ rv TopCoin
 
 $RoundZero = $False
 $MathObject = @()
-Sleep ($BrainConfig.Interval+$RetryInterval-(Get-Date).Second)
+Sleep ($DeepDataAnalysisConfig.Interval+$RetryInterval-(Get-Date).Second)
 }
 
 

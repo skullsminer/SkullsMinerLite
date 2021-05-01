@@ -1,31 +1,26 @@
-if (!(IsLoaded(".\Includes\include.ps1"))) {. .\Includes\include.ps1; RegisterLoaded(".\Includes\include.ps1")}
+if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Gminer\miner.exe"
-# $Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.18/gminer_2_18_windows64.zip"
-# $Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.36/gminer_2_36_windows64.zip"
-# $Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.44/gminer_2_44_windows64.zip"
-$Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.53/gminer_2_53_windows64.zip"
+$Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.54/gminer_2_54_windows64.zip"
 
 $Commands = [PSCustomObject]@{
     "cuckoocycle"    = " --algo aeternity --pers auto" #Aeternity 
     "eaglesong"       = " --algo eaglesong" #eaglesong
-    # "ethash"          = " --algo ethash" #Ethash
-    # "equihash96"   = " --algo 96_5 --pers auto" #Equihash96 (fastest)
-    "grincuckaroo29"  = " --algo cuckaroo29 --pers auto" #Grincuckaroo29 (fastest)
-    "grincuckarood29"  = " --algo grin29 --pers auto" #Grincuckaroo29 (fastest)
-    # "beam"         = " --devices $($Config.SelGPUDSTM) --algo 150_5 --pers Beam-PoW" #Equihash150 (fastest)
-    # "beamv2"       = " --devices $($Config.SelGPUDSTM) -a beamhashII" #Equihash150 (NiceHash)
+    "ethash"          = " --algo ethash" #Ethash
+    "ethashlowmemory"  = " --algo ethashlowmemory" #Ethashlowmemory
+    "grincuckaroo29b"  = " --algo cuckaroo29b --pers auto" #Grincuckaroo29b (fastest)
+    "grincuckaroo29s"  = " --algo swap --pers auto" #Grincuckaroo29s (fastest)
+    "Cortex"         = " --algo cortex " #cortex (fastest)
+    "Aeternity"       = " --algo aeternity" #Aeternity
     "beamv3"           = " -a BeamHashIII" #Equihash150,5,3 (NiceHash)
-    # "equihash-btg" = " --devices $($Config.SelGPUDSTM) --algo 144_5 --pers BgoldPoW" # Equihash-btg (fastest)
-    # "equihash125"    = " --devices $($Config.SelGPUDSTM) --algo 125_4 --pers auto" #Equihash125
-    # "equihash144"      = " --devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Equihash144 (fastest)
-    # "equihash192"  = " --devices $($Config.SelGPUDSTM) --algo 192_7 --pers auto" #Equihash192 (fastest)
-    # "grincuckatoo31"  = " --devices $($Config.SelGPUDSTM) --algo grin31 --pers auto" #Cuckatoo31 requires 7.4GB VRam, will work on 8GB cards under Linux and Windows 7, will not work under Windows 10
+    "equihash125"    = " --devices $($Config.SelGPUDSTM) --algo 125_4 --pers auto" #Equihash125
+    "equihash144"      = " --devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Equihash144 (fastest)
+    "equihash192"  = " --devices $($Config.SelGPUDSTM) --algo 192_7 --pers auto" #Equihash192 (fastest)
+    "grincuckatoo31"  = " --devices $($Config.SelGPUDSTM) --algo grin31 --pers auto" #Cuckatoo31 requires 7.4GB VRam, will work on 8GB cards under Linux and Windows 7, will not work under Windows 10
     # "zhash"        = " --devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Zhash (fastest)
     "cuckaroom"       = " --algo grin29" #Cuckaroom 
     "grincuckatoo32"   = " --algo grin32 --pers auto" #Grincuckatoo32
-    # "kawpow"           = " --algo kawpow" #KAWPOW [RVN fork]
-    # "handshake"           = " --algo Handshake --pers auto" #Handshake 
+    "kawpow"           = " --algo kawpow" #KAWPOW [RVN fork]
     "cuckaroo29bfc"    = " --algo bfc" #Cuckaroo29bfc
     "cuckarooz29"      = " --algo cuckarooz29" #Cuckarooz29
 }

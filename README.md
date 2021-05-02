@@ -14,10 +14,10 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 <p align="center">
 Readme Updated 2021 April 30
 <p align="center">
-<img src="https://skullsminer.net/images/Screen.jpg">	
+<img src="https://skullsminer.net/images/Screenshot.jpg">	
 </p>
 <p align="center">
-<img src="https://skullsminer.net/images/UI.png">	
+<img src="https://skullsminer.net/images/WebUI.png">	
 </p>
 
 *****
@@ -62,7 +62,7 @@ Easy configuration, easy start in two steps:
       2. Hit "Start"
       
 <p align="center">
-<img src="https://skullsminer.net/images/configpage.png">	
+<img src="https://skullsminer.net/images/configpage02.png">	
 </p>
 
 *****

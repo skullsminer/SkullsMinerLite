@@ -1281,7 +1281,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelInterval.AutoSize                 = $false
     $LabelInterval.width                    = 120
     $LabelInterval.height                   = 20
-    $LabelInterval.location                 = New-Object System.Drawing.Point(2,46)
+    $LabelInterval.location                 = New-Object System.Drawing.Point(2,134)
     $LabelInterval.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelInterval
 
@@ -1293,7 +1293,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBInterval.AutoSize                 = $false
     $TBInterval.width                    = 300
     $TBInterval.height                   = 20
-    $TBInterval.location                 = New-Object System.Drawing.Point(122,46)
+    $TBInterval.location                 = New-Object System.Drawing.Point(122,134)
     $TBInterval.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBInterval
 
@@ -1302,7 +1302,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelLocation.AutoSize                 = $false
     $LabelLocation.width                    = 120
     $LabelLocation.height                   = 20
-    $LabelLocation.location                 = New-Object System.Drawing.Point(2,68)
+    $LabelLocation.location                 = New-Object System.Drawing.Point(2,156)
     $LabelLocation.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelLocation
 
@@ -1314,7 +1314,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBLocation.AutoSize                 = $false
     $TBLocation.width                    = 300
     $TBLocation.height                   = 20
-    $TBLocation.location                 = New-Object System.Drawing.Point(122,68)
+    $TBLocation.location                 = New-Object System.Drawing.Point(122,156)
     $TBLocation.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBLocation
 
@@ -1369,7 +1369,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelAlgos.AutoSize                 = $false
     $LabelAlgos.width                    = 120
     $LabelAlgos.height                   = 20
-    $LabelAlgos.location                 = New-Object System.Drawing.Point(2,112)
+    $LabelAlgos.location                 = New-Object System.Drawing.Point(2,224)
     $LabelAlgos.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelAlgos
 
@@ -1381,7 +1381,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBAlgos.AutoSize                 = $false
     $TBAlgos.width                    = 300
     $TBAlgos.height                   = 20
-    $TBAlgos.location                 = New-Object System.Drawing.Point(122,112)
+    $TBAlgos.location                 = New-Object System.Drawing.Point(122,224)
     $TBAlgos.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBAlgos
 
@@ -1390,7 +1390,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelCurrency.AutoSize                 = $false
     $LabelCurrency.width                    = 120
     $LabelCurrency.height                   = 20
-    $LabelCurrency.location                 = New-Object System.Drawing.Point(2,134)
+    $LabelCurrency.location                 = New-Object System.Drawing.Point(2,178)
     $LabelCurrency.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelCurrency
 
@@ -1402,7 +1402,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBCurrency.AutoSize                 = $false
     $TBCurrency.width                    = 300
     $TBCurrency.height                   = 20
-    $TBCurrency.location                 = New-Object System.Drawing.Point(122,134)
+    $TBCurrency.location                 = New-Object System.Drawing.Point(122,178)
     $TBCurrency.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBCurrency
 
@@ -1411,7 +1411,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelPwdCurrency.AutoSize                 = $false
     $LabelPwdCurrency.width                    = 120
     $LabelPwdCurrency.height                   = 20
-    $LabelPwdCurrency.location                 = New-Object System.Drawing.Point(2,156)
+    $LabelPwdCurrency.location                 = New-Object System.Drawing.Point(2,202)
     $LabelPwdCurrency.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelPwdCurrency
 
@@ -1423,39 +1423,39 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBPwdCurrency.AutoSize                 = $false
     $TBPwdCurrency.width                    = 300
     $TBPwdCurrency.height                   = 20
-    $TBPwdCurrency.location                 = New-Object System.Drawing.Point(122,156)
+    $TBPwdCurrency.location                 = New-Object System.Drawing.Point(122,202)
     $TBPwdCurrency.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBPwdCurrency
 
-    $LabelDonate                          = New-Object system.Windows.Forms.Label
-    $LabelDonate.text                     = "Donate (min)"
-    $LabelDonate.AutoSize                 = $false
-    $LabelDonate.width                    = 120
-    $LabelDonate.height                   = 20
-    $LabelDonate.location                 = New-Object System.Drawing.Point(2,268)
-    $LabelDonate.Font                     = 'Microsoft Sans Serif,10'
-    $LabelDonate.Visible                  = $False
-    $ConfigPageControls += $LabelDonate
+    #$LabelDonate                          = New-Object system.Windows.Forms.Label
+    #$LabelDonate.text                     = "Donate (min)"
+    #$LabelDonate.AutoSize                 = $false
+    #$LabelDonate.width                    = 120
+    #$LabelDonate.height                   = 20
+    #$LabelDonate.location                 = New-Object System.Drawing.Point(2,268)
+    #$LabelDonate.Font                     = 'Microsoft Sans Serif,10'
+    #$LabelDonate.Visible                  = $False
+    #$ConfigPageControls += $LabelDonate
 
-    $TBDonate                          = New-Object system.Windows.Forms.TextBox
-    $TBDonate.Tag                      = "Donate"
-    $TBDonate.MultiLine                = $False
+    #$TBDonate                          = New-Object system.Windows.Forms.TextBox
+    #$TBDonate.Tag                      = "Donate"
+    #$TBDonate.MultiLine                = $False
     # $TBDonate.Scrollbars              = "Vertical" 
-    $TBDonate.text                     = $Config.Donate
-    $TBDonate.AutoSize                 = $false
-    $TBDonate.width                    = 300
-    $TBDonate.height                   = 20
-    $TBDonate.location                 = New-Object System.Drawing.Point(122,268)
-    $TBDonate.Font                     = 'Microsoft Sans Serif,10'
-    $TBDonate.Visible                  = $False
-    $ConfigPageControls += $TBDonate
+    #$TBDonate.text                     = $Config.Donate
+    #$TBDonate.AutoSize                 = $false
+    #$TBDonate.width                    = 300
+    #$TBDonate.height                   = 20
+    #$TBDonate.location                 = New-Object System.Drawing.Point(122,268)
+    #$TBDonate.Font                     = 'Microsoft Sans Serif,10'
+    #$TBDonate.Visible                  = $False
+    #$ConfigPageControls += $TBDonate
 
     $LabelProxy                          = New-Object system.Windows.Forms.Label
     $LabelProxy.text                     = "Proxy"
     $LabelProxy.AutoSize                 = $false
     $LabelProxy.width                    = 120
     $LabelProxy.height                   = 20
-    $LabelProxy.location                 = New-Object System.Drawing.Point(2,178)
+    $LabelProxy.location                 = New-Object System.Drawing.Point(2,246)
     $LabelProxy.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelProxy
 
@@ -1467,7 +1467,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBProxy.AutoSize                 = $false
     $TBProxy.width                    = 300
     $TBProxy.height                   = 20
-    $TBProxy.location                 = New-Object System.Drawing.Point(122,178)    
+    $TBProxy.location                 = New-Object System.Drawing.Point(122,246)    
     $TBProxy.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBProxy
 
@@ -1476,7 +1476,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelActiveMinerGainPct.AutoSize                 = $false
     $LabelActiveMinerGainPct.width                    = 120
     $LabelActiveMinerGainPct.height                   = 20
-    $LabelActiveMinerGainPct.location                 = New-Object System.Drawing.Point(2,202)
+    $LabelActiveMinerGainPct.location                 = New-Object System.Drawing.Point(2,268)
     $LabelActiveMinerGainPct.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelActiveMinerGainPct
 
@@ -1488,7 +1488,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBActiveMinerGainPct.AutoSize                 = $false
     $TBActiveMinerGainPct.width                    = 300
     $TBActiveMinerGainPct.height                   = 20
-    $TBActiveMinerGainPct.location                 = New-Object System.Drawing.Point(122,202)
+    $TBActiveMinerGainPct.location                 = New-Object System.Drawing.Point(122,268)
     $TBActiveMinerGainPct.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBActiveMinerGainPct
 
@@ -1497,7 +1497,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMPHAPIKey.AutoSize                 = $false
     $LabelMPHAPIKey.width                    = 120
     $LabelMPHAPIKey.height                   = 20
-    $LabelMPHAPIKey.location                 = New-Object System.Drawing.Point(2,224)
+    $LabelMPHAPIKey.location                 = New-Object System.Drawing.Point(2,46)
     $LabelMPHAPIKey.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelMPHAPIKey
 
@@ -1508,7 +1508,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBMPHAPIKey.AutoSize                 = $false
     $TBMPHAPIKey.width                    = 300
     $TBMPHAPIKey.height                   = 20
-    $TBMPHAPIKey.location                 = New-Object System.Drawing.Point(122,224)
+    $TBMPHAPIKey.location                 = New-Object System.Drawing.Point(122,46)
     $TBMPHAPIKey.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBMPHAPIKey
 	
@@ -1517,7 +1517,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMPHAPIID.AutoSize                 = $false
     $LabelMPHAPIID.width                    = 120
     $LabelMPHAPIID.height                   = 20
-    $LabelMPHAPIID.location                 = New-Object System.Drawing.Point(2,246)
+    $LabelMPHAPIID.location                 = New-Object System.Drawing.Point(2,68)
     $LabelMPHAPIID.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelMPHAPIID
 
@@ -1528,7 +1528,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBMPHAPIID.AutoSize                 = $false
     $TBMPHAPIID.width                    = 300
     $TBMPHAPIID.height                   = 20
-    $TBMPHAPIID.location                 = New-Object System.Drawing.Point(122,246)
+    $TBMPHAPIID.location                 = New-Object System.Drawing.Point(122,68)
     $TBMPHAPIID.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBMPHAPIID
 
@@ -1537,7 +1537,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMinersTypes.AutoSize                 = $false
     $LabelMinersTypes.width                    = 120
     $LabelMinersTypes.height                   = 20
-    $LabelMinersTypes.location                 = New-Object System.Drawing.Point(2,268)
+    $LabelMinersTypes.location                 = New-Object System.Drawing.Point(2,112)
     $LabelMinersTypes.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $LabelMinersTypes
 
@@ -1547,7 +1547,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeCPU.AutoSize              = $false
     $CheckBoxMinerTypeCPU.width                 = 60
     $CheckBoxMinerTypeCPU.height                = 20
-    $CheckBoxMinerTypeCPU.location              = New-Object System.Drawing.Point(124,268)
+    $CheckBoxMinerTypeCPU.location              = New-Object System.Drawing.Point(124,112)
     $CheckBoxMinerTypeCPU.Font                  = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeCPU.Checked               = ($CheckBoxMinerTypeCPU.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeCPU
@@ -1574,7 +1574,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeNVIDIA.AutoSize              = $false
     $CheckBoxMinerTypeNVIDIA.width                 = 70
     $CheckBoxMinerTypeNVIDIA.height                = 20
-    $CheckBoxMinerTypeNVIDIA.location              = New-Object System.Drawing.Point(186,268)
+    $CheckBoxMinerTypeNVIDIA.location              = New-Object System.Drawing.Point(186,112)
     $CheckBoxMinerTypeNVIDIA.Font                  = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeNVIDIA.Checked               = ($CheckBoxMinerTypeNVIDIA.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeNVIDIA
@@ -1600,7 +1600,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxMinerTypeAMD.AutoSize = $false
     $CheckBoxMinerTypeAMD.width = 60
     $CheckBoxMinerTypeAMD.height = 20
-    $CheckBoxMinerTypeAMD.location = New-Object System.Drawing.Point(261, 268)
+    $CheckBoxMinerTypeAMD.location = New-Object System.Drawing.Point(261, 112)
     $CheckBoxMinerTypeAMD.Font = 'Microsoft Sans Serif,10'
     $CheckBoxMinerTypeAMD.Checked = ($CheckBoxMinerTypeAMD.text -in $Config.Type)
     $ConfigPageControls += $CheckBoxMinerTypeAMD

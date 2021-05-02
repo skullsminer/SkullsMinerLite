@@ -4,7 +4,7 @@ $Path = ".\Bin\NVIDIA-Ethminer\ethminer.exe"
 $Uri = "https://github.com/ethereum-mining/ethminer/releases/download/v0.19.0-alpha.0/ethminer-0.19.0-alpha.0-cuda10.0-windows-amd64.zip"
 $Commands = [PSCustomObject]@{
     "ethash" = "" #Ethash(fastest)
-	"ethashlowmemory" = "" #Ethashlowmemory(fastest)
+	"ethashlowmemory" = "" #EthashLowMemory(fastest)
 }
 $Port = $Variables.NVIDIAMinerAPITCPPort
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

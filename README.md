@@ -270,7 +270,7 @@ Some miners may need 'Visual C++ 2015 update 3' if you don't already have it: Vi
 
 Running multiple cards its recommended to increase Virtual Memory 64gb is optimal
 
-Requires Nvidia driver 431.86: https://www.geforce.com/drivers
+Requires Nvidia driver 431.86 or above: https://www.geforce.com/drivers
 
 Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-archive 
 CAUTION: During the CudaSetup choose CUDA to be installed only!

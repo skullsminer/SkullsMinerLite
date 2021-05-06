@@ -56,7 +56,7 @@ SkullsMinerLite Monitors mining pools in real-time in order to find the most pro
 
 Easy configuration, easy start in two steps:
 
-      Run SKMLAsAdmin
+      Run SKMLasAdmin
 
       1. Enter your BTC address and hit Save Config
       2. Hit "Start"

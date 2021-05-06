@@ -22,18 +22,6 @@ Readme Updated 2021 April 30
 
 *****
 
-## CREDITS
-
-*****
-The miner script has been forked from NplusMiner, for my private use only.
-Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
-!!!!Credit to <a href="https://github.com/MrPlusGH/NPlusMiner" title="NPlusMiner">MrPlus</a> &<a href="https://github.com/Minerx117/NemosMiner" title="Minerx117">NemosMiner</a>!!!
-
-**SkullsMinerLiteMainIcon: Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-
-**SkullsMinerLite: Some Icons used from <a href="https://icons8.com" title="icons8.com">icons8</a>
-
-
 Fee:
 
       There is a 15 minutes per day fee (1%).
@@ -276,7 +264,19 @@ Some miners may need Cuda Drivers https://developer.nvidia.com/cuda-toolkit-arch
 CAUTION: During the CudaSetup choose CUDA to be installed only!
 
 *****
+*****
 
+## CREDITS
+
+*****
+The miner script has been forked from NplusMiner, for my private use only.
+Since I´m changing a lot to suit my needs and this is the best way for me to learn coding, I decided to make the source code public, so that others can profit from my modifications.
+!!!!Credit to <a href="https://github.com/MrPlusGH/NPlusMiner" title="NPlusMiner">MrPlus</a> &<a href="https://github.com/Minerx117/NemosMiner" title="Minerx117">NemosMiner</a>!!!
+
+**SkullsMinerLiteMainIcon: Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+
+**SkullsMinerLite: Some Icons used from <a href="https://icons8.com" title="icons8.com">icons8</a>
+*****
 
 Licensed under the GNU General Public License v3.0
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. https://github.com/skullsminer/SkullsMinerLite/blob/master/LICENSE

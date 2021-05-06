@@ -1,1 +1,0 @@
-Start-Process PowerShell -WorkingDirectory $pwd -Verb RunAs "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd';'$pwd'; & '.\SkullsMinerLite.ps1';`"";

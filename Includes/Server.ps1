@@ -205,9 +205,13 @@ Function Start-Server {
                         $Header += "&nbsp&nbsp&nbsp&nbsp&nbsp<img src=""https://img.icons8.com/dusk/64/000000/circled-pause.png"" width=""16"" height=""16""/>&nbsp<a href=""./Cmd-Pause"">Pause Mining</a>"
                     }
 					$Header +=
+						
+						<span class="right">
+                        </span><br>
+
 
                     If (Test-Path ".\Config\Peers.json") {
-                        $Header += " Rigs:&nbsp&nbsp&nbsp&nbsp&nbsp"
+                        $Header += "Rigs:&nbsp&nbsp&nbsp&nbsp&nbsp"
                         (get-content ".\Config\Peers.json" | ConvertFrom-Json) | Sort Name | foreach {
                             $Peer = $_
                             $Header += "<a href=""http://$($Peer.IP):$($Peer.Port)/Status"">$($Peer.Name)</a>&nbsp&nbsp&nbsp&nbsp&nbsp"

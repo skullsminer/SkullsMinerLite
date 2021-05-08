@@ -7,8 +7,8 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
  # SkullsMinerLite   - NVIDIA | AMD | CPU
 [![Build](https://img.shields.io/badge/Supported_OS-Windows-blue.svg)]()
 [![Version tag](https://img.shields.io/github/release/skullsminer/SkullsMinerLite.svg?)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
-[![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
 [![code size](https://img.shields.io/github/languages/code-size/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite)
+[![Version date tag](https://img.shields.io/github/release-date/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg)](https://img.shields.io/github/downloads/skullsminer/SkullsMinerLite/total.svg) 
 [![GitHub license](https://img.shields.io/github/license/skullsminer/SkullsMinerLite.svg)](https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE)
 

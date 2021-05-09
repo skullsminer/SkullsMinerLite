@@ -1,7 +1,7 @@
 Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 
 <p align="center">
-<img src="https://skullsminer.net/images/hacker.png" width="128" height="128">
+<img src="https://skullsminer.net/images/logo.png" width="128" height="128">
 </p>
 
  # SkullsMinerLite   - NVIDIA | AMD | CPU

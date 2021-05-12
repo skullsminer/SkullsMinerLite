@@ -3,7 +3,8 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\\Bin\\NVIDIA-Phoenix\\PhoenixMiner.exe"
-$Uri = "https://raw.githubusercontent.com/PhoenixMinerDevTeam/files/main/PhoenixMiner_5.6a_Windows.zip"
+#$Uri = "https://raw.githubusercontent.com/PhoenixMinerDevTeam/files/main/PhoenixMiner_5.6a_Windows.zip"
+$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/releases/download/5.6d/PhoenixMiner_5.6d_Windows.zip"
 $Commands = [PSCustomObject]@{
     "ethash" = " -di $($($Config.SelGPUCC).Replace(',',''))" #Ethash(fastest)
 	"ethashlowmemory" = " -di $($($Config.SelGPUCC).Replace(',',''))" #EthashLowMemory(fastest)

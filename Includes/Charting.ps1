@@ -89,7 +89,8 @@ Switch ($Chart) {
            $chart1.Height = $Height
           
            # $chart1.BackColor = [System.Drawing.Color]::White
-           $chart1.BackColor = "#F0F0F0"
+           $chart1.BackColor = "#2e3349"
+		   $chart1.ForeColor = "#037df7"
          
         # title 
            # [void]$chart1.Titles.Add("This is the Chart Title")
@@ -98,7 +99,7 @@ Switch ($Chart) {
          
            $chartarea = New-Object System.Windows.Forms.DataVisualization.Charting.ChartArea
            $chartarea.Name = "ChartArea1"
-           $chartarea.BackColor = "#2B3232"
+           $chartarea.BackColor = "#2e3349"
            # $chartarea.BackColor = [System.Drawing.Color]::FromArgb(0,255,255,255)
            $chartarea.BackSecondaryColor = "#777E7E"
            $chartarea.BackGradientStyle  = 3
@@ -167,7 +168,8 @@ Switch ($Chart) {
            $chart1.Height = $Height
           
            # $chart1.BackColor = [System.Drawing.Color]::White
-           $chart1.BackColor = "#F0F0F0"
+           $chart1.BackColor = "#2e3349"
+		   $chart1.ForeColor = "#037df7"
          
            $chartarea = New-Object System.Windows.Forms.DataVisualization.Charting.ChartArea
            $chartarea.Name = "ChartArea1"
@@ -239,7 +241,8 @@ Switch ($Chart) {
            $chart1.Height = $Height
           
            # $chart1.BackColor = [System.Drawing.Color]::White
-           $chart1.BackColor = "#F0F0F0"
+           $chart1.BackColor = "#2e3349"
+		   $chart1.ForeColor = "#037df7"
          
            $chartarea = New-Object System.Windows.Forms.DataVisualization.Charting.ChartArea
            $chartarea.Name = "ChartArea1"
@@ -261,7 +264,8 @@ Switch ($Chart) {
         # legend 
            $legend = New-Object system.Windows.Forms.DataVisualization.Charting.Legend
            $legend.name = "Legend1"
-           $legend.BackColor = "#F0F0F0"
+           $legend.BackColor = "#2e3349"
+		   $legend.ForeColor = "#037df7"
            $chart1.Legends.Add($legend)
          
         # $BaseColor = "424B54"

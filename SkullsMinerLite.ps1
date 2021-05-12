@@ -106,7 +106,7 @@ Write-Host -F Yellow " Copyright and license notices must be preserved."
         $Branding = Get-Content ".\Config\Branding.json" | ConvertFrom-Json
     } Else {
         $Branding = [PSCustomObject]@{
-            LogoPath = "https://skullsminer.net/images/hacker.png"
+            LogoPath = "https://skullsminer.net/images/logo.png"
             BrandName = "SkullsMinerLite"
             BrandWebSite = "https://github.com/skullsminer/SkullsMinerLite"
             ProductLable = "SkullsMinerLite"
@@ -133,7 +133,7 @@ Function Global:TimerUITick
         If (!$Variables.EndLoop) {Update-Status($Variables.StatusText)}
         # $TimerUI.Interval = 1
 
-    $LabelBTCD.ForeColor = "Green"
+    $LabelBTCD.ForeColor = "#097a75"
         Start-ChildJobs
 
         $Variables.EarningsTrackerJobs | ? {$_.state -eq "Running"} | foreach {
@@ -304,7 +304,7 @@ Function Global:TimerUITick
                 
                 $LabelEarningsDetails.Lines = @()
                 # If ((($Variables.Earnings.Values | measure -Property Growth1 -Sum).sum*1000*24) -lt ((($Variables.Earnings.Values | measure -Property BTCD -Sum).sum*1000)*0.999)) {
-                    # $LabelEarningsDetails.ForeColor = "Red" } else { $LabelEarningsDetails.ForeColor = "Green" }
+                    # $LabelEarningsDetails.ForeColor = "Red" } else { $LabelEarningsDetails.ForeColor = "#097a75" }
                 $TrendSign = switch ([Math]::Round((($Variables.Earnings.Values | measure -Property Growth1 -Sum).sum*1000*24),3) - [Math]::Round((($Variables.Earnings.Values | measure -Property Growth6 -Sum).sum*1000*4),3)) {
                         {$_ -eq 0}
                             {"="}
@@ -345,8 +345,8 @@ Function Global:TimerUITick
             $Variables.CurrentVersion = [Version](Get-Content .\Version.json | ConvertFrom-Json).Version
             $Variables.CurrentVersionAutoUpdated = (Get-Content .\Version.json | ConvertFrom-Json).AutoUpdated.Value
             if ((Get-Content .\Version.json | ConvertFrom-Json).AutoUpdated -and $LabelNotifications.Lines[$LabelNotifications.Lines.Count-1] -ne "Auto Updated on $($Variables.CurrentVersionAutoUpdated)"){
-                $LabelNotifications.ForeColor = "Green"
-                Update-Notifications("Running $($Variables.CurrentProduct) Version $([Version]$Variables.CurrentVersion)")
+                $LabelNotifications.ForeColor = "#097a75"
+				Update-Notifications("Running $($Variables.CurrentProduct) Version $([Version]$Variables.CurrentVersion)")
                 Update-Notifications("Auto Updated on $($Variables.CurrentVersionAutoUpdated)")
             }
         
@@ -557,6 +557,8 @@ $MainForm.text                  = "Form"
 $MainForm.TopMost               = $false
 $MainForm.FormBorderStyle       = 'Fixed3D'
 $MainForm.MaximizeBox           = $false
+$MainForm.BackColor = "#181e36"
+
 
 $MainForm.add_Shown({
     # Check if new version is available
@@ -567,7 +569,7 @@ $MainForm.add_Shown({
     If ($Version.Product -eq $Variables.CurrentProduct -and [Version]$version.Version -gt $Variables.CurrentVersion -and $Version.Update) {
         Update-Status("Version $($version.Version) available. (You are running $($Variables.CurrentVersion))")
         # If ([version](GetNVIDIADriverVersion) -ge [Version]$Version.MinNVIDIADriverVersion){
-            $LabelNotifications.ForeColor = "Green"
+            $LabelNotifications.ForeColor = "#097a75"
             $LabelNotifications.Lines += "Version $([Version]$version.Version) available"
             $LabelNotifications.Lines += $version.Message
             If ($Config.Autoupdate -and ! $Config.ManualConfig) {Autoupdate}
@@ -603,7 +605,7 @@ $MainForm.add_Shown({
         If ($Version.Product -eq $Variables.CurrentProduct -and [Version]$version.Version -gt $Variables.CurrentVersion -and $Version.Update) {
             Update-Status("Version $($version.Version) available. (You are running $($Variables.CurrentVersion))")
             # If ([version](GetNVIDIADriverVersion) -ge [Version]$Version.MinNVIDIADriverVersion){
-                $LabelNotifications.ForeColor = "Green"
+                $LabelNotifications.ForeColor = "#037ef7"
                 $LabelNotifications.Lines += "Version $([Version]$version.Version) available"
                 $LabelNotifications.Lines += $version.Message
                 If ($Config.Autoupdate -and ! $Config.ManualConfig) {Autoupdate}
@@ -704,22 +706,36 @@ Try{
 
 $RunPage = New-Object System.Windows.Forms.TabPage
 $RunPage.Text = "Run"
+$RunPage.BackColor = "#2e3349"
+#$RunPage.ForeColor = "#027df6"
 $SwitchingPage = New-Object System.Windows.Forms.TabPage
 $SwitchingPage.Text = "Switching"
+$SwitchingPage.BackColor = "#2e3349"
+#$SwitchingPage.ForeColor = "#027df6"
 $ConfigPage = New-Object System.Windows.Forms.TabPage
 $ConfigPage.Text = "Config"
+$ConfigPage.BackColor = "#2e3349"
+$ConfigPage.ForeColor = "#027df6"
 $MonitoringPage = New-Object System.Windows.Forms.TabPage
 $MonitoringPage.Text = "Monitoring"
+$MonitoringPage.BackColor = "#2e3349"
+#$MonitoringPage.ForeColor = "#027df6"
 $EstimationsPage = New-Object System.Windows.Forms.TabPage
 $EstimationsPage.Text = "Benchmarks"
+$EstimationsPage.BackColor = "#2e3349"
+#$EstimationsPage.ForeColor = "#027df6"
 $ServerModePage = New-Object System.Windows.Forms.TabPage
 $ServerModePage.Text = "Server Mode"
+$ServerModePage.BackColor = "#2e3349"
+$ServerModePage.ForeColor = "#027df6"
 
 $tabControl.DataBindings.DefaultDataSourceUpdateMode = 0
 $tabControl.Location = New-Object System.Drawing.Point(10,91)
 $tabControl.Name = "tabControl"
 $tabControl.width = 720
 $tabControl.height = 359
+$tabControl.BackColor = "#2e3349"
+#$tabControl.ForeColor = "#027df6"
 $MainForm.Controls.Add($tabControl)
 $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $MonitoringPage, $EstimationsPage, $ServerModePage))
 
@@ -727,12 +743,13 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $MainFormControls = @()
 
     # $Logo = [System.Drawing.Image]::Fromfile('.\config\logo.png')
-    $pictureBoxLogo = new-object Windows.Forms.PictureBox
-    $pictureBoxLogo.Width = 47 #$img.Size.Width
-    $pictureBoxLogo.Height = 47 #$img.Size.Height
-    # $pictureBoxLogo.Image = $Logo
-    $pictureBoxLogo.SizeMode = 1
-    $pictureBoxLogo.ImageLocation = $Branding.LogoPath
+    $pictureBoxLogo          		= new-object Windows.Forms.PictureBox
+    $pictureBoxLogo.Width    		= 69 #$img.Size.Width
+    $pictureBoxLogo.Height   		= 69 #$img.Size.Height
+	$pictureBoxLogo.location 		= New-Object System.Drawing.Point(25,2)
+    # $pictureBoxLogo.Image			= $Logo
+    $pictureBoxLogo.SizeMode		= 1
+    $pictureBoxLogo.ImageLocation	= $Branding.LogoPath
     $MainFormControls += $pictureBoxLogo
 
     $LabelEarningsDetails                          = New-Object system.Windows.Forms.TextBox
@@ -740,79 +757,86 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelEarningsDetails.MultiLine                = $true
     $LabelEarningsDetails.text                     = ""
     $LabelEarningsDetails.AutoSize                 = $false
-    $LabelEarningsDetails.width                    = 382 #200
-    $LabelEarningsDetails.height                   = 47 #62
-    $LabelEarningsDetails.location                 = New-Object System.Drawing.Point(57,2)
+    $LabelEarningsDetails.width                    = 250 #200
+    $LabelEarningsDetails.height                   = 45 #62
+    $LabelEarningsDetails.location                 = New-Object System.Drawing.Point(112,3)
     $LabelEarningsDetails.Font                     = 'lucida console,10'
     $LabelEarningsDetails.BorderStyle              = 'None'
-    $LabelEarningsDetails.BackColor                = [System.Drawing.SystemColors]::Control
-    $LabelEarningsDetails.ForeColor                = "Green"
+    $LabelEarningsDetails.BackColor                = "#181e36"
+    $LabelEarningsDetails.ForeColor                = "#097a75"
     $LabelEarningsDetails.Visible                  = $True
     # $TBNotifications.TextAlign                = "Right"
     $MainFormControls += $LabelEarningsDetails
 
     $LabelBTCD                          = New-Object system.Windows.Forms.Label
-    $LabelBTCD.text                     = "BTC/D"
+    $LabelBTCD.text                     = "BTC/D" #aka Version
     $LabelBTCD.AutoSize                 = $False
     $LabelBTCD.width                    = 473
-    $LabelBTCD.height                   = 35
-    $LabelBTCD.location                 = New-Object System.Drawing.Point(247,2)
+    $LabelBTCD.height                   = 34
+    $LabelBTCD.location                 = New-Object System.Drawing.Point(247,1)
     $LabelBTCD.Font                     = 'Microsoft Sans Serif,14'
     $LabelBTCD.TextAlign                = "MiddleRight"
-    $LabelBTCD.ForeColor                = "Green"
-    $LabelBTCD.Backcolor               = "Transparent"
+    $LabelBTCD.ForeColor                = "#097a75"
+    $LabelBTCD.Backcolor               = "#181e36"
     # $LabelBTCD.BorderStyle              = 'FixedSingle'
     $MainFormControls += $LabelBTCD
 
     $LabelBTCPrice                          = New-Object system.Windows.Forms.Label
     $LabelBTCPrice.text                     = If($Variables.Rates.$Currency -gt 0){"BTC/$($Config.Currency) $($Variables.Rates.$Currency)"}
     $LabelBTCPrice.AutoSize                 = $false
-    $LabelBTCPrice.width                    = 400
-    $LabelBTCPrice.height                   = 20
-    $LabelBTCPrice.location                 = New-Object System.Drawing.Point(630,39)
-    $LabelBTCPrice.Font                     = 'Microsoft Sans Serif,8'
-    # $LabelBTCPrice.ForeColor              = "Gray"
+    $LabelBTCPrice.width                    = 210
+    $LabelBTCPrice.height                   = 21
+    $LabelBTCPrice.location                 = New-Object System.Drawing.Point(112,47)
+	$LabelBTCPrice.Font                     = 'Microsoft Sans Serif,9'
+    $LabelBTCPrice.BackColor                = "#181e36"
+	$LabelBTCPrice.ForeColor                = "#097a75"
     $MainFormControls += $LabelBTCPrice
+	
+	$LabelNotifications                          = New-Object system.Windows.Forms.TextBox
+    $LabelNotifications.Tag                      = ""
+    $LabelNotifications.MultiLine                = $true
+    # $TBNotifications.Scrollbars                = "Vertical" 
+    $LabelNotifications.text                     = ""
+    $LabelNotifications.AutoSize                 = $false
+    $LabelNotifications.width                    = 300
+    $LabelNotifications.height                   = 33
+    $LabelNotifications.location                 = New-Object System.Drawing.Point(480,32)
+    $LabelNotifications.Font                     = 'Microsoft Sans Serif,9'
+    $LabelNotifications.BorderStyle              = 'None'
+    $LabelNotifications.Visible                  = $True
+	$LabelNotifications.ForeColor				 = "#097a75"
+	$LabelNotifications.Backcolor                = "#181e36"
+    #$TBNotifications.TextAlign                = "left"
+    $MainFormControls += $LabelNotifications
 
     $ButtonPause                         = New-Object system.Windows.Forms.Button
     $ButtonPause.text                    = "Pause"
+	$ButtonPause.BackColor                = "#0092f9" #Vulcan
+	$ButtonPause.ForeColor				  = "white" #White
     $ButtonPause.width                   = 60
     $ButtonPause.height                  = 30
-    $ButtonPause.location                = New-Object System.Drawing.Point(610,62)
+    $ButtonPause.location                = New-Object System.Drawing.Point(610,64)
     $ButtonPause.Font                    = 'Microsoft Sans Serif,10'
     $ButtonPause.Visible                 = $False
     $MainFormControls += $ButtonPause
 
     $ButtonStart                         = New-Object system.Windows.Forms.Button
     $ButtonStart.text                    = "Start"
+	$ButtonStart.BackColor                = "#0092f9" #Vulcan
+	$ButtonStart.ForeColor				  = "white" #White
     $ButtonStart.width                   = 60
     $ButtonStart.height                  = 30
-    $ButtonStart.location                = New-Object System.Drawing.Point(670,62)
+    $ButtonStart.location                = New-Object System.Drawing.Point(670,64)
     $ButtonStart.Font                    = 'Microsoft Sans Serif,10'
     $MainFormControls += $ButtonStart
 
-    $LabelNotifications                          = New-Object system.Windows.Forms.TextBox
-    $LabelNotifications.Tag                      = ""
-    $LabelNotifications.MultiLine                = $true
-    # $TBNotifications.Scrollbars             = "Vertical" 
-    $LabelNotifications.text                     = ""
-    $LabelNotifications.AutoSize                 = $false
-    $LabelNotifications.width                    = 280
-    $LabelNotifications.height                   = 18
-    $LabelNotifications.location                 = New-Object System.Drawing.Point(10,49)
-    $LabelNotifications.Font                     = 'Microsoft Sans Serif,10'
-    $LabelNotifications.BorderStyle              = 'None'
-    $LabelNotifications.BackColor                = [System.Drawing.SystemColors]::Control
-    $LabelNotifications.Visible                  = $True
-    # $TBNotifications.TextAlign                = "Right"
-    $MainFormControls += $LabelNotifications
-
     $LabelAddress                          = New-Object system.Windows.Forms.Label
     $LabelAddress.text                     = "Wallet Address"
-    $LabelAddress.AutoSize                 = $false
+	$LabelAddress.AutoSize                 = $false
+	$LabelAddress.ForeColor				  = "white" #White
     $LabelAddress.width                    = 100
     $LabelAddress.height                   = 20
-    $LabelAddress.location                 = New-Object System.Drawing.Point(10,68)
+    $LabelAddress.location                 = New-Object System.Drawing.Point(10,72)
     $LabelAddress.Font                     = 'Microsoft Sans Serif,10'
     $MainFormControls += $LabelAddress
 
@@ -822,9 +846,11 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     # $TBAddress.Scrollbars             = "Vertical" 
     $TBAddress.text                     = $Config.Wallet
     $TBAddress.AutoSize                 = $false
+	$TBAddress.BackColor                = "#252a40" #Ebony Clay
+	$TBAddress.ForeColor				= "#037ef7" #Azure Radiance
     $TBAddress.width                    = 280
     $TBAddress.height                   = 20
-    $TBAddress.location                 = New-Object System.Drawing.Point(112,68)
+    $TBAddress.location                 = New-Object System.Drawing.Point(112,69)
     $TBAddress.Font                     = 'Microsoft Sans Serif,10'
     # $TBAddress.TextAlign                = "Right"
     $MainFormControls += $TBAddress
@@ -834,6 +860,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
 
     $LabelStatus                          = New-Object system.Windows.Forms.TextBox
     $LabelStatus.MultiLine                = $true
+	$LabelStatus.BackColor                = "#0092f9" #Vulcan
+	$LabelStatus.ForeColor				  = "white" #White
     $LabelStatus.Scrollbars               = "Vertical" 
     $LabelStatus.text                     = ""
     $LabelStatus.AutoSize                 = $true
@@ -846,7 +874,9 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelEarnings                          = New-Object system.Windows.Forms.Label
     $LabelEarnings.text                     = "Earnings Tracker (Past 7 days earnings / Per pool earnings today)"
     $LabelEarnings.AutoSize                 = $false
-    $LabelEarnings.width                    = 600
+    $LabelEarnings.BackColor = "#2e3349"
+	$LabelEarnings.ForeColor = "#037df7"
+	$LabelEarnings.width                    = 600
     $LabelEarnings.height                   = 20
     $LabelEarnings.location                 = New-Object System.Drawing.Point(2,54)
     $LabelEarnings.Font                     = 'Microsoft Sans Serif,10'
@@ -856,12 +886,16 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
         $Chart1 = Invoke-Expression -Command ".\Includes\Charting.ps1 -Chart 'Front7DaysEarnings' -Width 505 -Height 85 -Currency $($Config.Passwordcurrency)"
         $Chart1.top = 74
         $Chart1.left = 2
+        $Chart1.BackColor = "#2e3349"
+		$Chart1.ForeColor = "#037df7"
         $RunPageControls += $Chart1
     }
     If (Test-Path ".\logs\DailyEarnings.csv"){
         $Chart2 = Invoke-Expression -Command ".\Includes\Charting.ps1 -Chart 'DayPoolSplit' -Width 200 -Height 85 -Currency $($Config.Passwordcurrency)"
         $Chart2.top = 74
         $Chart2.left = 500
+        $Chart2.BackColor = "#2e3349"
+		$Chart2.ForeColor = "#037df7"
         $RunPageControls += $Chart2
     }
 
@@ -874,6 +908,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $EarningsDGV.DataBindings.DefaultDataSourceUpdateMode   = 0
     $EarningsDGV.AutoSizeColumnsMode                        = "Fill"
     $EarningsDGV.RowHeadersVisible                          = $False
+	$EarningsDGV.BackColor              = "#252a40"
+	#$EarningsDGV.ForeColor				= "#0a79bd"
     $RunPageControls += $EarningsDGV
 	
 	$LabelBonus                    = New-Object System.Windows.Forms.LinkLabel
@@ -881,8 +917,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     # $LabelBonus.Size               = New-Object System.Drawing.Size(160,18)
     $LabelBonus.Location           = New-Object System.Drawing.Size(350,246)
     $LabelBonus.Size               = New-Object System.Drawing.Size(160,20)
-    $LabelBonus.LinkColor          = "BLUE"
-    $LabelBonus.ActiveLinkColor    = "BLUE"
+    $LabelBonus.LinkColor          = "#027ef6"
+    $LabelBonus.ActiveLinkColor    = "#027ef6"
     $LabelBonus.Text               = "ProHashing 0.50% Bonus"
     $LabelBonus.add_Click({[system.Diagnostics.Process]::start("https://prohashing.com?r=VaP0CpNE")})
     $RunPageControls += $LabelBonus
@@ -892,8 +928,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     # $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
     $LabelCopyright.Location        = New-Object System.Drawing.Size(520,246)
     $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelCopyright.LinkColor       = "BLUE"
-    $LabelCopyright.ActiveLinkColor = "BLUE"
+    $LabelCopyright.LinkColor       = "#027ef6"
+    $LabelCopyright.ActiveLinkColor = "#027ef6"
     $LabelCopyright.Text            = "Copyright (c) 2021-$((Get-Date).year) Skulldeath"
     $LabelCopyright.add_Click({[system.Diagnostics.Process]::start("https://github.com/skullsminer/SkullsMinerLite/blob/main/LICENSE")})
     $RunPageControls += $LabelCopyright
@@ -903,8 +939,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     # $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
     $LabelWebUI.Location        = New-Object System.Drawing.Size(150,246)
     $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelWebUI.LinkColor       = "BLUE"
-    $LabelWebUI.ActiveLinkColor = "BLUE"
+    $LabelWebUI.LinkColor       = "#027ef6"
+    $LabelWebUI.ActiveLinkColor = "#027ef6"
     $LabelWebUI.Text            = "Web interface"
     $LabelWebUI.add_Click({[system.Diagnostics.Process]::start("http://$($Config.Server_ClientIP):$($Config.Server_ClientPort)/Status")})
     $RunPageControls += $LabelWebUI
@@ -916,6 +952,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelRunningMiners.height                   = 20
     $LabelRunningMiners.location                 = New-Object System.Drawing.Point(2,246)
     $LabelRunningMiners.Font                     = 'Microsoft Sans Serif,10'
+	$LabelRunningMiners.BackColor = "#2e3349"
+	$LabelRunningMiners.ForeColor = "#027df6"
     $RunPageControls += $LabelRunningMiners
 
     $RunningMinersDGV                                            = New-Object system.Windows.Forms.DataGridView
@@ -926,6 +964,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $RunningMinersDGV.DataBindings.DefaultDataSourceUpdateMode   = 0
     $RunningMinersDGV.AutoSizeColumnsMode                        = "Fill"
     $RunningMinersDGV.RowHeadersVisible                          = $False
+	$RunningMinersDGV.BackColor = "#2e3349"
+	#$RunningMinersDGV.ForeColor = "#027df6"
     $RunPageControls += $RunningMinersDGV
 
     $RunPageControls | foreach {
@@ -948,6 +988,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckShowSwitchingCPU.height                = 20
     $CheckShowSwitchingCPU.location              = New-Object System.Drawing.Point(2,2)
     $CheckShowSwitchingCPU.Font                  = 'Microsoft Sans Serif,10'
+	$CheckShowSwitchingCPU.ForeColor = "#027df6"
     $CheckShowSwitchingCPU.Checked               = ("CPU" -in $Config.Type)
     $SwitchingPageControls += $CheckShowSwitchingCPU
     
@@ -962,6 +1003,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckShowSwitchingNVIDIA.location              = New-Object System.Drawing.Point(62,2)
     $CheckShowSwitchingNVIDIA.Font                  = 'Microsoft Sans Serif,10'
     $CheckShowSwitchingNVIDIA.Checked               = ("NVIDIA" -in $Config.Type)
+	$CheckShowSwitchingNVIDIA.ForeColor = "#027df6"
     $SwitchingPageControls += $CheckShowSwitchingNVIDIA
     
     $CheckShowSwitchingAMD = New-Object system.Windows.Forms.CheckBox
@@ -973,6 +1015,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckShowSwitchingAMD.location = New-Object System.Drawing.Point(137, 2)
     $CheckShowSwitchingAMD.Font = 'Microsoft Sans Serif,10'
     $CheckShowSwitchingAMD.Checked = ("AMD" -in $Config.Type)
+	$CheckShowSwitchingAMD.ForeColor = "#027df6"
     $SwitchingPageControls += $CheckShowSwitchingAMD
         
     $CheckShowSwitchingAMD | foreach {$_.Add_Click( {CheckBoxSwitching_Click($This)})}
@@ -1206,6 +1249,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
 
     $ButtonWriteServerConfig                         = New-Object system.Windows.Forms.Button
     $ButtonWriteServerConfig.text                    = "Save Config"
+    $ButtonWriteServerConfig.BackColor               = "#0092f9" #Vulcan
+	$ButtonWriteServerConfig.ForeColor				 = "white" #White
     $ButtonWriteServerConfig.width                   = 100
     $ButtonWriteServerConfig.height                  = 30
     $ButtonWriteServerConfig.location                = New-Object System.Drawing.Point(610,300)
@@ -1252,6 +1297,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBWorkerName.height                   = 20
     $TBWorkerName.location                 = New-Object System.Drawing.Point(122,2)
     $TBWorkerName.Font                     = 'Microsoft Sans Serif,10'
+	#$TBWorkerName.BackColor               = "#252a40"
+	#$TBWorkerName.ForeColor				 = "#0e6ca1"
     $ConfigPageControls += $TBWorkerName
 
      
@@ -1426,29 +1473,6 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBPwdCurrency.location                 = New-Object System.Drawing.Point(122,202)
     $TBPwdCurrency.Font                     = 'Microsoft Sans Serif,10'
     $ConfigPageControls += $TBPwdCurrency
-
-    #$LabelDonate                          = New-Object system.Windows.Forms.Label
-    #$LabelDonate.text                     = "Donate (min)"
-    #$LabelDonate.AutoSize                 = $false
-    #$LabelDonate.width                    = 120
-    #$LabelDonate.height                   = 20
-    #$LabelDonate.location                 = New-Object System.Drawing.Point(2,268)
-    #$LabelDonate.Font                     = 'Microsoft Sans Serif,10'
-    #$LabelDonate.Visible                  = $False
-    #$ConfigPageControls += $LabelDonate
-
-    #$TBDonate                          = New-Object system.Windows.Forms.TextBox
-    #$TBDonate.Tag                      = "Donate"
-    #$TBDonate.MultiLine                = $False
-    # $TBDonate.Scrollbars              = "Vertical" 
-    #$TBDonate.text                     = $Config.Donate
-    #$TBDonate.AutoSize                 = $false
-    #$TBDonate.width                    = 300
-    #$TBDonate.height                   = 20
-    #$TBDonate.location                 = New-Object System.Drawing.Point(122,268)
-    #$TBDonate.Font                     = 'Microsoft Sans Serif,10'
-    #$TBDonate.Visible                  = $False
-    #$ConfigPageControls += $TBDonate
 
     $LabelProxy                          = New-Object system.Windows.Forms.Label
     $LabelProxy.text                     = "Proxy"
@@ -1714,9 +1738,9 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxAutoUpdate.height                = 20
     $CheckBoxAutoUpdate.location              = New-Object System.Drawing.Point(560,156)
     $CheckBoxAutoUpdate.Font                  = 'Microsoft Sans Serif,10'
-    $CheckBoxAutoUpdate.Checked               =   $Config.AutoUpdate
-    $CheckBoxAutoUpdate.Visible               =   $False
-    # $CheckBoxAutoUpdate.Enabled               =   $False
+    $CheckBoxAutoUpdate.Checked               = $Config.AutoUpdate
+    $CheckBoxAutoUpdate.Visible               = $False
+    # $CheckBoxAutoUpdate.Enabled             = $False
     $ConfigPageControls += $CheckBoxAutoUpdate
 
     $CheckBoxGUIMinimized                       = New-Object system.Windows.Forms.CheckBox
@@ -1862,6 +1886,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     
     $ButtonWriteConfig                         = New-Object system.Windows.Forms.Button
     $ButtonWriteConfig.text                    = "Save Config"
+	$ButtonWriteConfig.BackColor               = "#0092f9" #Vulcan
+	$ButtonWriteConfig.ForeColor			   = "white" #White
     $ButtonWriteConfig.width                   = 100
     $ButtonWriteConfig.height                  = 30
     $ButtonWriteConfig.location                = New-Object System.Drawing.Point(610,300)
@@ -1873,6 +1899,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelPoolsSelect                          = New-Object system.Windows.Forms.Label
     $LabelPoolsSelect.text                     = "Do not select multiple variants of the same pool"
     $LabelPoolsSelect.AutoSize                 = $false
+	$LabelPoolsSelect.BackColor = "#2e3349"
+	$LabelPoolsSelect.ForeColor = "#7e7a81"
     $LabelPoolsSelect.width                    = 130
     $LabelPoolsSelect.height                   = 50
     $LabelPoolsSelect.location                 = New-Object System.Drawing.Point(427,2)
@@ -1888,7 +1916,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckedListBoxPools.text                  = "Pools"
     $CheckedListBoxPools.location              = New-Object System.Drawing.Point(427,54)
     $CheckedListBoxPools.CheckOnClick          = $True
-    $CheckedListBoxPools.BackColor                = [System.Drawing.SystemColors]::Control
+    $CheckedListBoxPools.BackColor = "#2e3349"
+	$CheckedListBoxPools.ForeColor = "#027df6"
     $CheckedListBoxPools.Items.Clear()
     $CheckedListBoxPools.Items.AddRange(((Get-ChildItem ".\Pools").BaseName | sort -Unique))
     $CheckedListBoxPools.add_SelectedIndexChanged({CheckedListBoxPools_Click($This)})
@@ -1914,6 +1943,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMonitoringWorkers.height = 20
     $LabelMonitoringWorkers.location = New-Object System.Drawing.Point(2, 4)
     $LabelMonitoringWorkers.Font = 'Microsoft Sans Serif,10'
+	$LabelMonitoringWorkers.ForeColor = "#027df6"
     $MonitoringPageControls += $LabelMonitoringWorkers
 
     $WorkersDGV = New-Object system.Windows.Forms.DataGridView
@@ -1930,6 +1960,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $GroupMonitoringSettings.Width = 710
     $GroupMonitoringSettings.Text = "Monitoring Settings"
     $GroupMonitoringSettings.Location = New-Object System.Drawing.Point(1, 272)
+	$GroupMonitoringSettings.ForeColor = "#027df6"
     $MonitoringPageControls += $GroupMonitoringSettings
 
     $LabelMonitoringServer = New-Object system.Windows.Forms.Label
@@ -1939,6 +1970,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMonitoringServer.height = 20
     $LabelMonitoringServer.location = New-Object System.Drawing.Point(2, 15)
     $LabelMonitoringServer.Font = 'Microsoft Sans Serif,10'
+	$LabelMonitoringServer.ForeColor = "#027df6"
     $MonitoringSettingsControls += $LabelMonitoringServer
 
     $TBMonitoringServer = New-Object system.Windows.Forms.TextBox
@@ -1961,6 +1993,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxReportToServer.location = New-Object System.Drawing.Point(324, 15)
     $CheckBoxReportToServer.Font = 'Microsoft Sans Serif,10'
     $CheckBoxReportToServer.Checked = $Config.ReportToServer
+	$CheckBoxReportToServer.ForeColor = "#027df6"
     $MonitoringSettingsControls += $CheckBoxReportToServer
 
     $CheckBoxShowWorkerStatus = New-Object system.Windows.Forms.CheckBox
@@ -1972,6 +2005,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $CheckBoxShowWorkerStatus.location = New-Object System.Drawing.Point(456, 15)
     $CheckBoxShowWorkerStatus.Font = 'Microsoft Sans Serif,10'
     $CheckBoxShowWorkerStatus.Checked = $Config.ShowWorkerStatus
+	$CheckBoxShowWorkerStatus.ForeColor = "#027df6"
     $MonitoringSettingsControls += $CheckBoxShowWorkerStatus
 
     $LabelMonitoringUser = New-Object system.Windows.Forms.Label
@@ -1981,6 +2015,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelMonitoringUser.height = 20
     $LabelMonitoringUser.location = New-Object System.Drawing.Point(2, 37)
     $LabelMonitoringUser.Font = 'Microsoft Sans Serif,10'
+	$LabelMonitoringUser.ForeColor = "#027df6"
     $MonitoringSettingsControls += $LabelMonitoringUser
 
     $TBMonitoringUser = New-Object system.Windows.Forms.TextBox
@@ -1992,6 +2027,7 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $TBMonitoringUser.height = 20
     $TBMonitoringUser.location = New-Object System.Drawing.Point(62, 37)
     $TBMonitoringUser.Font = 'Microsoft Sans Serif,10'
+	$TBMonitoringUser.ForeColor = "#027df6"
     $MonitoringSettingsControls += $TBMonitoringUser
 
     $ButtonGenerateMonitoringUser = New-Object system.Windows.Forms.Button
@@ -2002,7 +2038,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $ButtonGenerateMonitoringUser.Font = 'Microsoft Sans Serif,10'
     $ButtonGenerateMonitoringUser.Enabled = ($TBMonitoringUser.text -eq "")
     $MonitoringSettingsControls += $ButtonGenerateMonitoringUser
-
+    $ButtonGenerateMonitoringUser.BackColor = "#0092f9" #Vulcan
+	$ButtonGenerateMonitoringUser.ForeColor = "white" #White
     $ButtonGenerateMonitoringUser.Add_Click( {$TBMonitoringUser.text = [GUID]::NewGuid()})
     # Only enable the generate button when user is blank.
     $TBMonitoringUser.Add_TextChanged( { $ButtonGenerateMonitoringUser.Enabled = ($TBMonitoringUser.text -eq "") })
@@ -2010,6 +2047,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
 
     $ButtonMonitoringWriteConfig = New-Object system.Windows.Forms.Button
     $ButtonMonitoringWriteConfig.text = "Save Config"
+    $ButtonMonitoringWriteConfig.BackColor = "#0092f9" #Vulcan
+	$ButtonMonitoringWriteConfig.ForeColor = "white" #White
     $ButtonMonitoringWriteConfig.width = 100
     $ButtonMonitoringWriteConfig.height = 30
     $ButtonMonitoringWriteConfig.location = New-Object System.Drawing.Point(600, 15)

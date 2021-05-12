@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Gminer\miner.exe"
-$Uri = "https://github.com/develsoftware/GMinerRelease/releases/download/2.54/gminer_2_54_windows64.zip"
+$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/blob/main/MinersBinaries/GMiner/gminer_2_54_windows64.zip"
 
 $Commands = [PSCustomObject]@{
     "cuckoocycle"    = " --algo aeternity --pers auto" #Aeternity 

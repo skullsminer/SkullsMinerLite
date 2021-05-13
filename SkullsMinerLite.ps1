@@ -334,7 +334,7 @@ Function Global:TimerUITick
                 $LabelEarningsDetails.Lines += "Last 24h: " + ((Get-DisplayCurrency ($Variables.Earnings.Values | measure -Property Growth24 -Sum).sum)).DisplayStringPerDay + " " + $TrendSign
                 rv TrendSign
             } else {
-                $LabelBTCD.Text = "Waiting data from pools."
+                $LabelBTCD.Text = "Waiting for data from pools"
                 $LabelEarningsDetails.Lines = @()
             }
         

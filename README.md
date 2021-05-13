@@ -18,7 +18,7 @@ Readme Updated 2021 May 13
 <img src="https://skullsminer.net/images/Screen01.jpg">	
 </p>
 <p align="center">
-<img src="https://skullsminer.net/images/WebUI.png">	
+<img src="https://skullsminer.net/images/wUI.png">	
 </p>
 
 *****

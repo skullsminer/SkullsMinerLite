@@ -15,10 +15,10 @@ Copyright (c) 2021 SkullDeath	(https://github.com/skullsminer/SkullsMinerLite)
 <p align="center">
 Readme Updated 2021 May 13
 <p align="center">
-<img src="https://skullsminer.net/images/Screen01.jpg">	
+<img src="https://skullsminer.net/images/Screen03.jpg">	
 </p>
 <p align="center">
-<img src="https://skullsminer.net/images/w.png">	
+<img src="https://skullsminer.net/images/wy.png">	
 </p>
 
 *****

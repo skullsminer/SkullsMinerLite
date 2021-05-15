@@ -1066,8 +1066,6 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $ServermodePageControls = @()
     
 	$LabelCopyrightFreepik                 = New-Object System.Windows.Forms.LinkLabel
-    # $LabelCopyrightFreepik.Location        = New-Object System.Drawing.Size(415,61)
-    # $LabelCopyrightFreepik.Size            = New-Object System.Drawing.Size(200,20)
     $LabelCopyrightFreepik.Location        = New-Object System.Drawing.Size(2,315)
     $LabelCopyrightFreepik.Size            = New-Object System.Drawing.Size(201,20)
     $LabelCopyrightFreepik.LinkColor       = "#027ef6"
@@ -1077,8 +1075,6 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $ServermodePageControls += $LabelCopyrightFreepik
 	
 	$LabelCopyrightFlaticon                 = New-Object System.Windows.Forms.LinkLabel
-    # $LabelCopyrightFlaticon.Location        = New-Object System.Drawing.Size(415,61)
-    # $LabelCopyrightFlaticon.Size            = New-Object System.Drawing.Size(200,20)
     $LabelCopyrightFlaticon.Location        = New-Object System.Drawing.Size(197,315)
     $LabelCopyrightFlaticon.Size            = New-Object System.Drawing.Size(200,20)
     $LabelCopyrightFlaticon.LinkColor       = "#027ef6"

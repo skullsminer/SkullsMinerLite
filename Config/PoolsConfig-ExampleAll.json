@@ -24,24 +24,6 @@
                           "PricePenaltyFactor":  1
                       },
 
-    "hashrefinery":  {
-                         "UserName":  "skullsminer",
-                         "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
-                         "WorkerName":  "ID=skullsminerlite",
-                         "PricePenaltyFactor":  1
-                     },
-    "minemoney":  {
-                      "UserName":  "skullsminer",
-                      "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
-                      "WorkerName":  "ID=skullsminerlite",
-                      "PricePenaltyFactor":  1
-                  },
-    "minemoney24hr":  {
-                          "UserName":  "skullsminer",
-                          "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",
-                          "WorkerName":  "ID=skullsminerlite",
-                          "PricePenaltyFactor":  1
-                      },
     "miningpoolhub":  {
                           "UserName":  "skullsminer",
                           "Wallet":  "1Q9BoPvEgtUv6SFiYMaVABBwprTo5yBb6H",

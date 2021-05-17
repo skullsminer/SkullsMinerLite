@@ -55,6 +55,8 @@ Easy configuration, easy start in two steps:
 </p>
 
 *****
+[Detailed setup instruction](https://www.skullsminer.net/setup.php)
+*****
 If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in the config folder with an Editor and enter your wallet adress/api-key and save it.
 *****
 

@@ -949,8 +949,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelRunningMiners.text                     = "Running Miners"
     $LabelRunningMiners.AutoSize                 = $false
     $LabelRunningMiners.width                    = 200
-    $LabelRunningMiners.height                   = 15
-    $LabelRunningMiners.location                 = New-Object System.Drawing.Point(2,248)
+    $LabelRunningMiners.height                   = 20
+    $LabelRunningMiners.location                 = New-Object System.Drawing.Point(2,246)
     $LabelRunningMiners.Font                     = 'Microsoft Sans Serif,10'
 	$LabelRunningMiners.BackColor = "#2e3349"
 	$LabelRunningMiners.ForeColor = "#027df6"

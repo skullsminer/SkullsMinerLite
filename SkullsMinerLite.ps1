@@ -915,8 +915,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
 	$LabelBonus                    = New-Object System.Windows.Forms.LinkLabel
     # $LabelBonus.Location           = New-Object System.Drawing.Size(415,39)
     # $LabelBonus.Size               = New-Object System.Drawing.Size(160,18)
-    $LabelBonus.Location           = New-Object System.Drawing.Size(350,246)
-    $LabelBonus.Size               = New-Object System.Drawing.Size(160,20)
+    $LabelBonus.Location           = New-Object System.Drawing.Size(380,248)
+    $LabelBonus.Size               = New-Object System.Drawing.Size(140,15)
     $LabelBonus.LinkColor          = "#027ef6"
     $LabelBonus.ActiveLinkColor    = "#027ef6"
     $LabelBonus.Text               = "ProHashing 0.50% Bonus"
@@ -926,8 +926,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelCopyright                 = New-Object System.Windows.Forms.LinkLabel
     # $LabelCopyright.Location        = New-Object System.Drawing.Size(415,61)
     # $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelCopyright.Location        = New-Object System.Drawing.Size(520,246)
-    $LabelCopyright.Size            = New-Object System.Drawing.Size(200,20)
+    $LabelCopyright.Location        = New-Object System.Drawing.Size(535,248)
+    $LabelCopyright.Size            = New-Object System.Drawing.Size(200,15)
     $LabelCopyright.LinkColor       = "#027ef6"
     $LabelCopyright.ActiveLinkColor = "#027ef6"
     $LabelCopyright.Text            = "Copyright (c) 2021-$((Get-Date).year) Skulldeath"
@@ -937,8 +937,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelWebUI                 = New-Object System.Windows.Forms.LinkLabel
     # $LabelWebUI.Location        = New-Object System.Drawing.Size(415,61)
     # $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
-    $LabelWebUI.Location        = New-Object System.Drawing.Size(150,246)
-    $LabelWebUI.Size            = New-Object System.Drawing.Size(200,20)
+    $LabelWebUI.Location        = New-Object System.Drawing.Size(280,248)
+    $LabelWebUI.Size            = New-Object System.Drawing.Size(200,15)
     $LabelWebUI.LinkColor       = "#027ef6"
     $LabelWebUI.ActiveLinkColor = "#027ef6"
     $LabelWebUI.Text            = "Web interface"
@@ -949,8 +949,8 @@ $TabControl.Controls.AddRange(@($RunPage, $SwitchingPage, $ConfigPage, $Monitori
     $LabelRunningMiners.text                     = "Running Miners"
     $LabelRunningMiners.AutoSize                 = $false
     $LabelRunningMiners.width                    = 200
-    $LabelRunningMiners.height                   = 20
-    $LabelRunningMiners.location                 = New-Object System.Drawing.Point(2,246)
+    $LabelRunningMiners.height                   = 15
+    $LabelRunningMiners.location                 = New-Object System.Drawing.Point(2,248)
     $LabelRunningMiners.Font                     = 'Microsoft Sans Serif,10'
 	$LabelRunningMiners.BackColor = "#2e3349"
 	$LabelRunningMiners.ForeColor = "#027df6"

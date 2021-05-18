@@ -248,7 +248,7 @@ If you are using NiceHash, ProHashing &/or HashCryptos, Open PoolsConfig.json in
       Will toggle display at next refresh
 
 *****
- 
+If your Windows Defender makes some problems, [Defender Control](https://www.skullsminer.net/programs/DefenderControl.zip)
 
 If you have Windows 8, or 8.1, please update PowerShell:
 https://www.microsoft.com/en-us/download/details.aspx?id=50395

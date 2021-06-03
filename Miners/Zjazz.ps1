@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-zjazz12\zjazz_cuda.exe"
-$Uri = "https://github.com/zjazz/zjazz_cuda_miner/releases/download/1.2/zjazz_cuda_win64_1.2.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/Zjazz/zjazz_cuda_win64_1.2.zip"
 
 $Commands = [PSCustomObject]@{
     # "bitcash" = " -a bitcash" #Bitcash (testing)

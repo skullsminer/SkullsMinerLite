@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\AMD-XMRigCNGPU\xmrig.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/CPU-XMRig/xmrig-5.4.0-msvc-cuda10_1-win64.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CPU-XMRig/xmrig-5.4.0-msvc-cuda10_1-win64.zip"
 
 $Commands = [PSCustomObject]@{
     "cryptonight_gpu"       = " -a cn/gpu" #cryptonightGPU

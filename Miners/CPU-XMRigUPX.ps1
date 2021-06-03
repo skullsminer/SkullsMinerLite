@@ -4,7 +4,7 @@ return
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\CPU-XMRigUPX\xmrig.exe"
-$Uri = "https://github.com/uPlexa/xmrig-upx/releases/download/v0.2.0/xmrig-upx-v0.2.0-win64.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CPU-XMRigUPX/xmrig-upx-v0.2.0-win64.zip"
 
 $Commands = [PSCustomObject]@{
     # "cryptonightr"        = " -a cryptonight/r --nicehash" #cryptonight/r

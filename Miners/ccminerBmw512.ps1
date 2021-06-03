@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Ccminerbmw512\ccminer.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/ccminerBmw512/ccminer.exe"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/ccminerBmw512/ccminer.exe"
  
 $Commands = [PSCustomObject]@{
     "bmw512" = " -a bmw512 -d $($Config.SelGPUCC)" #Lyra2rev3 

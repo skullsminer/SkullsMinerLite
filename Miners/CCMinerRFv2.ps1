@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-ccminerrfv2\ccminer.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/CCMinerRFv2/ccminer.exe"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CCMinerRFv2/ccminer.exe"
 
 $Commands = [PSCustomObject]@{
     "rfv2" = " -i 28 " #rfv2

@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-CryptoDredge0160\CryptoDredge.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/CryptoDredge16/CryptoDredge_0.16.0_cuda_10.0_windows.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CryptoDredge/CryptoDredge_0.16.0_cuda_10.0_windows.zip"
 
 $Commands = [PSCustomObject]@{
     "exosis"            = " --intensity 8 -a exosis" #Exosis (fastest)

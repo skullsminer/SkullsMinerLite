@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\CPU-Verium\cpuminer.exe"
-$Uri = "https://github.com/fireworm71/veriumMiner/releases/download/v1.4/cpuminer_1.4_windows_x64_O2_GCC7.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/cpuminer%20verium/cpuminer_1.4_windows_x64_O2_GCC7.zip"
 
 $Commands = [PSCustomObject]@{
     "scryptn2" = "" #Yespower

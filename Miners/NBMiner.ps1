@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-NBMiner\nbminer.exe"
-$Uri = "https://github.com/NebuTech/NBMiner/releases/download/v37.3/NBMiner_37.3_Win.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/NBMiner/NBMiner_37.5_Win.zip"
 $Commands = [PSCustomObject]@{
     # "eaglesong"       = " -a eaglesong" #eaglesong
     # "handshake"       = "-a hns" #handshake

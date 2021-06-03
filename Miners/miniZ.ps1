@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-miniZ\miniZ.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/miniZ/miniZ_v1.7x4_win-x64.7z"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/miniZ/miniZ_v1.7x4_win-x64.7z"
 
 $Commands = [PSCustomObject]@{
     # "beamv2"       = " --par=beam --pers auto " #Beamv2

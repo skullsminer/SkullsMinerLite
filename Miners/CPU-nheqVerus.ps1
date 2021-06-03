@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\CPU-nheqVerus\nheqminer.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/CPU-nheqVerus/nheqminer-Windows-v0.8.1.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CPU-nheqVerus/nheqminer-Windows-v0.8.2.zip"
 
 $Commands = [PSCustomObject]@{
     "verus" = "" #Verushash

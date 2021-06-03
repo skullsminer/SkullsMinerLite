@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-EWBF0.6\\miner.exe"
-$Uri = "https://github.com/skullsminer/SkullsMinerLite-MinersBinaries/raw/main/MinersBinaries/EWBFv2/EWBFEquihashminerv0.6.7z"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/EWBFv2/EWBFEquihashminerv0.6.7z"
 $Commands = [PSCustomObject]@{
     # "equihash144"  = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Equihash144(fastest)
     # "zhash"        = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Zhash

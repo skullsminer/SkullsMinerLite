@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-Claymore\EthDcrMiner64.exe"
-$Uri = "https://github.com/Claymore-Dual/Claymore-Dual-Miner/releases/download/15.0/Claymore.s.dual.ethereum.v15.0.-.widows.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/Claymore.s.dual.ethereum/Claymore.s.dual.ethereum.v15.0.-.widows.zip"
 
 return
 $Commands = [PSCustomObject]@{

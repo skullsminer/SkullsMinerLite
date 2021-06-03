@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-Bminer\bminer.exe"
-$Uri = "https://www.bminercontent.com/releases/bminer-lite-v16.4.6-d77cc9b-amd64.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/Bminer/bminer-lite-v15.8.7-6831c33-amd64.zip"
 
 Return
 

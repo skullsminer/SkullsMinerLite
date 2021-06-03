@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\NVIDIA-CcminerNeoscryptXaya\ccminer-64bit.exe"
-$Uri = "https://github.com/xaya/ccminer/releases/download/v0.1/ccminer-64bit.exe"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/ccminer%20neoscrypt%20xaya/ccminer-64bit.exe"
  
 $Commands = [PSCustomObject]@{
     "neoscrypt-xaya" = " -a neoscrypt-xaya"

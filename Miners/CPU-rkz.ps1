@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) { . .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1") }
 
 $Path = ".\Bin\CPU-RKZ\cpuminer.exe"
-$Uri = "https://github.com/RickillerZ/cpuminer-RKZ/releases/download/V4.2b/cpuminer-RKZ.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/CPU-rkz/cpuminer-RKZ.zip"
 
 $Commands = [PSCustomObject]@{
     # "yespower" = "" #Yespower

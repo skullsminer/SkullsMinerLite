@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1;RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\CPU-Power2b\cpuminer.exe"
-$Uri = "https://github.com/cpu-pool/cpuminer-opt-cpupower/releases/download/1.4/Cpuminer-opt-cpu-pool-win64.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/Cpuminer-power2b/cpuminer-opt-power2b-v1.0.0-w64.7z"
 
 $Commands = [PSCustomObject]@{
     # "power2b" = "" #power2b

@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
  
 $Path = ".\Bin\NVIDIA-Ethminer\ethminer.exe"
-$Uri = "https://github.com/ethereum-mining/ethminer/releases/download/v0.19.0-alpha.0/ethminer-0.19.0-alpha.0-cuda10.0-windows-amd64.zip"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/EthMiner/ethminer-0.19.0-alpha.0-cuda10.0-windows-amd64.zip"
 $Commands = [PSCustomObject]@{
     "ethash" = "" #Ethash(fastest)
 	"ethashlowmemory" = "" #EthashLowMemory(fastest)

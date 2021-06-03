@@ -1,7 +1,7 @@
 if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLoaded(".\Includes\Include.ps1")}
 
 $Path = ".\Bin\CryptoNight-FireIce\xmr-stak.exe"
-$Uri = "https://github.com/nanopool/XMR-stak/releases/download/2.10.3/xmr-stak-win64-2.10.3.7z"
+$Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/a-xmr-stak/xmr-stak-win64-2.10.3.7z"
 
 Return
 

@@ -3,11 +3,12 @@ if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLo
 $Path = ".\Bin\NVIDIA-EWBF0.6\\miner.exe"
 $Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/EWBFv2/EWBFEquihashminerv0.6.7z"
 $Commands = [PSCustomObject]@{
-    # "equihash144"  = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Equihash144(fastest)
+    # "equihash1445"  = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Equihash1445(fastest)
     # "zhash"        = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers auto" #Zhash
-    # "equihash192"  = " --cuda_devices $($Config.SelGPUDSTM) --algo 192_7 --pers ZERO_PoW" #Equihash192(fastest)
+     "equihash1927"  = " --cuda_devices $($Config.SelGPUDSTM) --algo 192_7 --pers ZERO_PoW" #Equihash1927(fastest)
     # "equihash-btg" = " --cuda_devices $($Config.SelGPUDSTM) --algo 144_5 --pers BgoldPoW" # Equihash-btg(fastest)
-    # "equihash96"   = " --cuda_devices $($Config.SelGPUDSTM) --algo 96_5 --pers auto" #Equihash96(fastest)
+     "equihash965"   = " --cuda_devices $($Config.SelGPUDSTM) --algo 96_5 --pers auto" #Equihash965(fastest)
+	 "equihash2109"   = " --cuda_devices $($Config.SelGPUDSTM) --algo 210_9 --pers auto" #Equihash2109(fastest)
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

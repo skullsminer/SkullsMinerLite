@@ -4,10 +4,36 @@ $Path = ".\Bin\AMD-teamred081\teamredminer.exe"
 $Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/TeamRedMiner/teamredminer-v0.8.3-win.zip"
 
 $Commands = [PSCustomObject]@{
-    "etchash"= " --algo etchash" #etchash
-    "ethash" = " --algo ethash"  #ethash
-    "kawpow" = " --algo kawpow"  #kawpow
-	"verthash" = " --algo verthash" #kawpow
+
+	 "cn_conceal" = ""
+     "cn_haven" = ""
+     "cn_heavy" = ""
+     "cn_saber" = ""
+     "cnr" = ""
+     "cnv8" = ""
+     "cnv8_dbl" = ""
+     "cnv8_half" = ""
+     "cnv8_rwz" = ""
+     "cnv8_trtl" = ""
+     "cnv8_upx2" = ""
+     "cuckarood29_grin" = ""
+     "cuckatoo31_grin" = ""
+     "etchash" = ""
+     "ethash" = ""
+     "ethashlowmemory" = ""
+     "kawpow" = ""
+     "lyra2rev3" = ""
+     "lyra2z" = ""
+     "mtp" = ""
+     "nimiq" = ""
+     "phi2" = ""
+     "trtl_chukwa" = ""
+     "verthash" = ""
+     "trtl_chukwa2" = ""
+     "x16r" = ""
+     "x16rt" = ""
+     "x16rv2" = ""
+     "x16s" = ""
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName

@@ -3,7 +3,7 @@ if (!(IsLoaded(".\Includes\Include.ps1"))) {. .\Includes\Include.ps1; RegisterLo
 $Path = ".\Bin\NVIDIA-NBMiner\nbminer.exe"
 $Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/NBMiner/NBMiner_37.5_Win.zip"
 $Commands = [PSCustomObject]@{
-    "ethash"       = " -a ethash" #eaglesong
+    "ethash"       = " -a ethash" #ethash
 }
 
 $Port = $Variables.NVIDIAMinerAPITCPPort

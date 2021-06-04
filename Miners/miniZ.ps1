@@ -5,17 +5,19 @@ $Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBi
 
 $Commands = [PSCustomObject]@{
     # "beamv2"       = " --par=beam --pers auto " #Beamv2
-    "beamv3"       = " --par=144,5s --pers=Beam-PoW --ocX" #Beamv3
     # "equihashbtg" = " --algo 144,5 --pers BgoldPoW " # Equihash-btg MPH (fastest)
     # "equihashzcl" = " --par=192,7 --pers ZcashPoW" # Equihash-ZCL MPH
-    "equihash125"  = " --par=125,4 --ocX " #Equihash125
-    "equihash144"  = " --algo 144,5 --pers auto --ocX " #Equihash144 (fastest)
-    "equihash192"  = " --algo 192,7 --pers auto --ocX " #Equihash192 (fastest)
-    "zhash"        = " --algo 144,5 --pers auto " #Zhash (fastest)
     # "ethash"        = " --par ethash --ocX " #ethash 
     # "kawpow"        = " --par kawpow " #kawpow
     # "beam"         = " --algo 150,5 --pers auto" #Beam
-    # "equihash96"   = " --algo 96,5  --pers auto --oc1 " #Equihash96 (ewbf faster)
+    "equihash96"   = " --algo 96,5  --pers auto --oc1 " #Equihash96 (ewbf faster)
+	"equihash125"  = " --par=125,4 --ocX " #Equihash125
+    "equihash144"  = " --algo 144,5 --pers auto --ocX " #Equihash144 (fastest)
+    "equihash192"  = " --algo 192,7 --pers auto --ocX " #Equihash192 (fastest)
+    "zhash"        = " --algo 144,5 --pers auto " #Zhash (fastest)
+	"beamv3"       = " --par=144,5s --pers=Beam-PoW --ocX" #Beamv3
+	
+	
 }
 
 

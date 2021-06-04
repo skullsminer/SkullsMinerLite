@@ -8,7 +8,7 @@ If ((-not (Test-Path $DatPath) -or ($Variables.VertHasDatHash -ne "A55531E843CD5
 	$Variables.VertHasDatHash = (Get-FileHash .\Bin\NVIDIA-VertHash\Verthash.dat -ErrorAction SilentlyContinue).Hash
 	If ((-not (Test-Path $DatPath) -or ($Variables.VertHasDatHash -ne "A55531E843CD56B010114AAF6325B0D529ECF88F8AD47639B6EDEDAFD721AA48")) -and (Test-Path $Path)) {
 		$Variables.VertHasDatHash = $null
-		$Variables.StatusText = "Downloading verthash.dat... 1.2Gb !"
+		$Variables.StatusText = "Downloading verthash.dat... 1.2Gb, Be patient please. It takes time!"
 		Invoke-WebRequest -OutFile $DatPath -Uri "https://vtc.suprnova.cc/verthash.dat"
 		$Variables.StatusText = "Validating verthash.dat..."
 		$Variables.VertHasDatHash = (Get-FileHash .\Bin\NVIDIA-VertHash\Verthash.dat -ErrorAction SilentlyContinue).Hash

@@ -5,8 +5,7 @@ $Path = ".\Bin\cpu-SRBMiner\SRBMiner-MULTI.exe"
 $Uri = "https://skullsminer.net/programs/SkullsMinerLite-MinersBinaries/MinersBinaries/SRBMiner-Multi/SRBMiner-Multi-0-7-5-win64.zip"
 
 $Commands = [PSCustomObject]@{ 
-  $Commands = [PSCustomObject[]]@(
-	"balloon_zentoshi" = "" #BalloonZentoshi
+  	"balloon_zentoshi" = "" #BalloonZentoshi
 	"circcash"  = "" #Circcash/CIRC
 	"cpupower" = #CPUpower
     "curvehash"  = #Curvehash
